@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/styles.css":
@@ -8,6 +7,7 @@
   \**************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -16,12 +16,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./assets/Roboto-Regular.ttf */ "./src/assets/Roboto-Regular.ttf"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n\nmain {\n    display: grid;\n    grid-template-rows: 1fr 10fr 0.2fr;\n    \n    position: relative;\n    width: 100vw;\n    height: 100vh;\n}\n\n#header {\n    border: 2px solid blue;\n\n    display: grid;\n    place-items: center;\n    padding: 1rem;\n}\n\n#app {\n    display: grid;\n    grid-template-columns: 1fr 5fr;\n    place-self: center;\n\n    border: 2px solid gray;\n    border-radius: 5px;\n\n    width: 90%;\n    height: 90%;\n    padding: 1rem;\n}\n\n#app > div { \n    border: 1px solid black;\n    \n}\n\n#footer {\n    text-align: center;\n    background-color: aquamarine;\n}", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;IACV,sBAAsB;AAC1B;;AAEA;IACI,aAAa;IACb,kCAAkC;;IAElC,kBAAkB;IAClB,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,sBAAsB;;IAEtB,aAAa;IACb,mBAAmB;IACnB,aAAa;AACjB;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,kBAAkB;;IAElB,sBAAsB;IACtB,kBAAkB;;IAElB,UAAU;IACV,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,uBAAuB;;AAE3B;;AAEA;IACI,kBAAkB;IAClB,4BAA4B;AAChC","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n\nmain {\n    display: grid;\n    grid-template-rows: 1fr 10fr 0.2fr;\n    \n    position: relative;\n    width: 100vw;\n    height: 100vh;\n}\n\n#header {\n    border: 2px solid blue;\n\n    display: grid;\n    place-items: center;\n    padding: 1rem;\n}\n\n#app {\n    display: grid;\n    grid-template-columns: 1fr 5fr;\n    place-self: center;\n\n    border: 2px solid gray;\n    border-radius: 5px;\n\n    width: 90%;\n    height: 90%;\n    padding: 1rem;\n}\n\n#app > div { \n    border: 1px solid black;\n    \n}\n\n#footer {\n    text-align: center;\n    background-color: aquamarine;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n    font-family: 'Roboto';\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('truetype');\n}\n\n* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n\nhtml {\n    font-family: 'Roboto', Arial, Helvetica, sans-serif;\n    font-size: 16px;\n}\n\nmain {\n    display: grid;\n    grid-template-rows: 1fr 10fr 0.2fr;\n    \n    position: relative;\n    width: 100vw;\n    height: 100vh;\n}\n\n/* Header */\n#header {\n    display: grid;\n    place-items: end center;\n    padding: 1rem;\n}\n\n\n/* Application section */\n#app {\n    display: grid;\n    grid-template-columns: 1fr 5fr;\n    place-self: center;\n    border-radius: 5px;\n\n    width: 90%;\n    height: 90%;\n    padding: 1rem;\n\n    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n}\n\n#app > div { \n    border: 1px solid black;\n    \n}\n/* Sidebar of App */\n\n#sidebar {\n    display: grid;\n    justify-content: center;\n}\n\n#projects {\n    display: grid;\n    gap: 1rem;\n    margin: 1rem;\n}\n\n#projects > div {\n    border: 1px solid lightgray;\n\n    width: 100%;\n    height: min-content;\n    padding: 0.5rem 5rem;\n}\n\n#projects > div:hover {\n    background-color: lightgray;\n    \n}\n\n#today {\n    \n}\n/* Main contents of App */\n#main-content {\n    display: grid;\n    place-items: start;\n}\n\n#main-content button {\n    border: none;\n    border-radius: 4px;\n    height: 200px;\n    width: 200px;\n    background: lightgray;\n}\n\n#current {\n    margin: 1rem;\n}\n\n.card {\n    border: 1px solid black;\n    width: 200px;\n    height: 200px;\n    padding: 1rem;\n}\n/* Footer */\n#footer {\n    text-align: center;\n    background-color: aquamarine;\n}", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,qBAAqB;IACrB,+DAA0D;AAC9D;;AAEA;IACI,SAAS;IACT,UAAU;IACV,sBAAsB;AAC1B;;AAEA;IACI,mDAAmD;IACnD,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,kCAAkC;;IAElC,kBAAkB;IAClB,YAAY;IACZ,aAAa;AACjB;;AAEA,WAAW;AACX;IACI,aAAa;IACb,uBAAuB;IACvB,aAAa;AACjB;;;AAGA,wBAAwB;AACxB;IACI,aAAa;IACb,8BAA8B;IAC9B,kBAAkB;IAClB,kBAAkB;;IAElB,UAAU;IACV,WAAW;IACX,aAAa;;IAEb,qDAAqD;AACzD;;AAEA;IACI,uBAAuB;;AAE3B;AACA,mBAAmB;;AAEnB;IACI,aAAa;IACb,uBAAuB;AAC3B;;AAEA;IACI,aAAa;IACb,SAAS;IACT,YAAY;AAChB;;AAEA;IACI,2BAA2B;;IAE3B,WAAW;IACX,mBAAmB;IACnB,oBAAoB;AACxB;;AAEA;IACI,2BAA2B;;AAE/B;;AAEA;;AAEA;AACA,yBAAyB;AACzB;IACI,aAAa;IACb,kBAAkB;AACtB;;AAEA;IACI,YAAY;IACZ,kBAAkB;IAClB,aAAa;IACb,YAAY;IACZ,qBAAqB;AACzB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,uBAAuB;IACvB,YAAY;IACZ,aAAa;IACb,aAAa;AACjB;AACA,WAAW;AACX;IACI,kBAAkB;IAClB,4BAA4B;AAChC","sourcesContent":["@font-face {\n    font-family: 'Roboto';\n    src: url('./assets/Roboto-Regular.ttf') format('truetype');\n}\n\n* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n\nhtml {\n    font-family: 'Roboto', Arial, Helvetica, sans-serif;\n    font-size: 16px;\n}\n\nmain {\n    display: grid;\n    grid-template-rows: 1fr 10fr 0.2fr;\n    \n    position: relative;\n    width: 100vw;\n    height: 100vh;\n}\n\n/* Header */\n#header {\n    display: grid;\n    place-items: end center;\n    padding: 1rem;\n}\n\n\n/* Application section */\n#app {\n    display: grid;\n    grid-template-columns: 1fr 5fr;\n    place-self: center;\n    border-radius: 5px;\n\n    width: 90%;\n    height: 90%;\n    padding: 1rem;\n\n    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n}\n\n#app > div { \n    border: 1px solid black;\n    \n}\n/* Sidebar of App */\n\n#sidebar {\n    display: grid;\n    justify-content: center;\n}\n\n#projects {\n    display: grid;\n    gap: 1rem;\n    margin: 1rem;\n}\n\n#projects > div {\n    border: 1px solid lightgray;\n\n    width: 100%;\n    height: min-content;\n    padding: 0.5rem 5rem;\n}\n\n#projects > div:hover {\n    background-color: lightgray;\n    \n}\n\n#today {\n    \n}\n/* Main contents of App */\n#main-content {\n    display: grid;\n    place-items: start;\n}\n\n#main-content button {\n    border: none;\n    border-radius: 4px;\n    height: 200px;\n    width: 200px;\n    background: lightgray;\n}\n\n#current {\n    margin: 1rem;\n}\n\n.card {\n    border: 1px solid black;\n    width: 200px;\n    height: 200px;\n    padding: 1rem;\n}\n/* Footer */\n#footer {\n    text-align: center;\n    background-color: aquamarine;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34,6 +39,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "* {\n    margin: 0;\n    padding: 0;\n
   \*****************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /*
@@ -139,12 +145,52 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+
+  if (!url) {
+    return url;
+  }
+
+  url = String(url.__esModule ? url.default : url); // If url is already wrapped in quotes, remove them
+
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+
+  if (options.hash) {
+    url += options.hash;
+  } // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+
+
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+
+  return url;
+};
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/runtime/sourceMaps.js":
 /*!************************************************************!*\
   !*** ./node_modules/css-loader/dist/runtime/sourceMaps.js ***!
   \************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = function (item) {
@@ -176,6 +222,7 @@ module.exports = function (item) {
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -230,6 +277,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \****************************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 var stylesInDOM = [];
@@ -343,6 +391,7 @@ module.exports = function (list, options) {
   \********************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 var memo = {};
@@ -391,6 +440,7 @@ module.exports = insertBySelector;
   \**********************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -411,6 +461,7 @@ module.exports = insertStyleElement;
   \**********************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -432,6 +483,7 @@ module.exports = setAttributesWithoutAttributes;
   \***************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -511,6 +563,7 @@ module.exports = domAPI;
   \*********************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -527,6 +580,29 @@ function styleTagTransform(css, styleElement) {
 }
 
 module.exports = styleTagTransform;
+
+/***/ }),
+
+/***/ "./src/todo.js":
+/*!*********************!*\
+  !*** ./src/todo.js ***!
+  \*********************/
+/***/ (() => {
+
+events.publish('todoCreated', todoObj);
+
+
+
+/***/ }),
+
+/***/ "./src/assets/Roboto-Regular.ttf":
+/*!***************************************!*\
+  !*** ./src/assets/Roboto-Regular.ttf ***!
+  \***************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "fc2b5060f7accec5cf74.ttf";
 
 /***/ })
 
@@ -556,6 +632,9 @@ module.exports = styleTagTransform;
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -581,6 +660,18 @@ module.exports = styleTagTransform;
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -597,6 +688,52 @@ module.exports = styleTagTransform;
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"bundle": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
@@ -604,13 +741,16 @@ module.exports = styleTagTransform;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
+/* harmony import */ var _todo_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todo.js */ "./src/todo.js");
+/* harmony import */ var _todo_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_todo_js__WEBPACK_IMPORTED_MODULE_1__);
 
 
 

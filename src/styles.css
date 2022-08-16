@@ -1,7 +1,17 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/Roboto-Regular.ttf') format('truetype');
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }
 
 main {
@@ -13,32 +23,86 @@ main {
     height: 100vh;
 }
 
+/* Header */
 #header {
-    border: 2px solid blue;
-
     display: grid;
-    place-items: center;
+    place-items: end center;
     padding: 1rem;
 }
 
+
+/* Application section */
 #app {
     display: grid;
     grid-template-columns: 1fr 5fr;
     place-self: center;
-
-    border: 2px solid gray;
     border-radius: 5px;
 
     width: 90%;
     height: 90%;
     padding: 1rem;
+
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 #app > div { 
     border: 1px solid black;
     
 }
+/* Sidebar of App */
 
+#sidebar {
+    display: grid;
+    justify-content: center;
+}
+
+#projects {
+    display: grid;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+#projects > div {
+    border: 1px solid lightgray;
+
+    width: 100%;
+    height: min-content;
+    padding: 0.5rem 5rem;
+}
+
+#projects > div:hover {
+    background-color: lightgray;
+    
+}
+
+#today {
+    
+}
+/* Main contents of App */
+#main-content {
+    display: grid;
+    place-items: start;
+}
+
+#main-content button {
+    border: none;
+    border-radius: 4px;
+    height: 200px;
+    width: 200px;
+    background: lightgray;
+}
+
+#current {
+    margin: 1rem;
+}
+
+.card {
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    padding: 1rem;
+}
+/* Footer */
 #footer {
     text-align: center;
     background-color: aquamarine;
