@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/styles.css":
@@ -7,7 +8,6 @@
   \**************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -39,7 +39,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n    font-family: 'Roboto
   \*****************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /*
@@ -151,7 +150,6 @@ module.exports = function (cssWithMappingToString) {
   \********************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 module.exports = function (url, options) {
@@ -190,7 +188,6 @@ module.exports = function (url, options) {
   \************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 module.exports = function (item) {
@@ -222,7 +219,6 @@ module.exports = function (item) {
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -277,7 +273,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \****************************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 var stylesInDOM = [];
@@ -391,7 +386,6 @@ module.exports = function (list, options) {
   \********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 var memo = {};
@@ -440,7 +434,6 @@ module.exports = insertBySelector;
   \**********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -461,7 +454,6 @@ module.exports = insertStyleElement;
   \**********************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -483,7 +475,6 @@ module.exports = setAttributesWithoutAttributes;
   \***************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -563,7 +554,6 @@ module.exports = domAPI;
   \*********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -583,15 +573,60 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/displayTodos.js":
+/*!*****************************!*\
+  !*** ./src/displayTodos.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ makeCard)
+/* harmony export */ });
+/* harmony import */ var _todo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todo.js */ "./src/todo.js");
+
+
+const todoArr = [new _todo_js__WEBPACK_IMPORTED_MODULE_0__["default"]('steve', 'a', 'v', 'v', 'notes')];
+
+const content = document.getElementById('current');
+function makeCard() {
+    for (const i in todoArr){
+        const element = document.createElement('div');
+        element.classList.add('card');
+
+        for (const prop in i) {
+            const component = document.createElement('div');
+            component.innerHTML = i[prop];
+            element.appendChild(component);
+        }
+
+        content.appendChild(element);
+    }
+}
+
+/***/ }),
+
 /***/ "./src/todo.js":
 /*!*********************!*\
   !*** ./src/todo.js ***!
   \*********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-events.publish('todoCreated', todoObj);
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Todo)
+/* harmony export */ });
+// events.publish('todoCreated', todoObj);
 
-
+class Todo {
+    constructor(name, description, dueDate, priority, notes) {
+        this.name = name;
+        this.description = description;
+        this.dueDate = dueDate;
+        this.priority = priority;
+        this.notes = notes;
+    }
+}
 
 /***/ }),
 
@@ -601,7 +636,6 @@ events.publish('todoCreated', todoObj);
   \***************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 module.exports = __webpack_require__.p + "fc2b5060f7accec5cf74.ttf";
 
 /***/ })
@@ -741,19 +775,21 @@ module.exports = __webpack_require__.p + "fc2b5060f7accec5cf74.ttf";
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
 /* harmony import */ var _todo_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todo.js */ "./src/todo.js");
-/* harmony import */ var _todo_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_todo_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _displayTodos_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./displayTodos.js */ "./src/displayTodos.js");
 
 
 
+
+const btn = document.querySelector('button');
+btn.addEventListener('click', _displayTodos_js__WEBPACK_IMPORTED_MODULE_2__["default"]);
 })();
 
 /******/ })()
