@@ -1,0 +1,1 @@
+events.publish('todoCreated', todoObj);

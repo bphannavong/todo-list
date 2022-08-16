@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 1fr 10fr 0.2fr;
+    
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#header {
+    border: 2px solid blue;
+
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
+
+#app {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    place-self: center;
+
+    border: 2px solid gray;
+    border-radius: 5px;
+
+    width: 90%;
+    height: 90%;
+    padding: 1rem;
+}
+
+#app > div { 
+    border: 1px solid black;
+    
+}
+
+#footer {
+    text-align: center;
+    background-color: aquamarine;
+}
