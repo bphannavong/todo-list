@@ -34,7 +34,7 @@ main {
 /* Application section */
 #app {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: minmax(max-content, 1fr) 5fr;
     place-self: center;
     border-radius: 5px;
 
@@ -53,37 +53,38 @@ main {
 
 #sidebar {
     display: grid;
-    justify-content: center;
+    place-content: start;
 }
 
-#projects {
+#sidebar > div {
     display: grid;
+    grid-auto-flow: row;
     
     gap: 1rem;
     margin: 1rem;
 }
 
-#projects > div {
-    border: 1px solid lightgray;
-
+#sidebar > div > div {
     width: 100%;
-    height: min-content;
-    padding: 0.5rem 5rem;
+    padding: 0.5rem 3rem;
 }
 
-#projects > div:hover {
+#sidebar > div > div:hover {
+    border-radius: 5px;
     background-color: lightgray;
-    
 }
 
-#today {
-    
+hr {
+    margin: 1rem;
 }
+
+
+
 /* Main contents of App */
 #main-content {
     display: grid;
     place-items: start;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 #main-content button {
