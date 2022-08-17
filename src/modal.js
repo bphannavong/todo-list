@@ -10,27 +10,25 @@ const handleModal = (function () {
     const submitBtn = document.getElementById('submitBtn');
     
     //bind events
-    addBtn.addEventListener('click', _show);
-    addBtn.addEventListener('click', getValues); //test
-    closeModal.addEventListener('click', _hide);
+    addBtn.addEventListener('click', show);
+    closeModal.addEventListener('click', hide);
 
     submitBtn.addEventListener('click', getValues);
-    submitBtn.addEventListener('click', _hide);
+    submitBtn.addEventListener('click', hide);
 
     window.addEventListener('click', function (e) { //if window is clicked on modal (not modal content) then close modal
         if (e.target == modal) {
-            _hide();
+            hide();
         }
     });
 
-    function _show() {
+    function show() {
         modal.style.display = 'block';
     }
 
-    function _hide() {
+    function hide() {
          modal.style.display = 'none';
     }
-
 
     function getValues() {
         const name = document.getElementById('title').value;
@@ -39,10 +37,8 @@ const handleModal = (function () {
         const priority = document.getElementById('priority').value;
         //const values = values...
         // publish values => to pub
-        console.log('hey');
         events.publish('formSubmit', [name, description, dueDate, priority]);
     }
 })();
 
-export default handleModal;
 

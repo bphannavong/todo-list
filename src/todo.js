@@ -1,27 +1,21 @@
-// events.publish('todoCreated', todoObj);
 import events from './mediator.js';
-const tasks = [];
 
+const todo = (function() {
+    //task array with all todos
+    const tasks = [];
 
-const Todo = ([name, description, dueDate, priority]) => {
-    return {name, description, dueDate, priority};
-};
+    //bind events
+    events.subscribe('formSubmit', addTodo);
 
-export default Todo;
-
-events.subscribe('formSubmit', addTodo);
-//sub to modal values ==> push todo to list
-function addTodo(arr) {
+     //Todo factory function
+     const Todo = ([name, description, dueDate, priority]) => {
+        return {name, description, dueDate, priority};
+    };
     
-    tasks.push(Todo(arr));
-    events.publish('todoAdded', tasks);
-}
-// class Todo {
-//     constructor(name, description, dueDate, priority, notes) {
-//         this.name = name;
-//         this.description = description;
-//         this.dueDate = dueDate;
-//         this.priority = priority;
-//     }
-    
-// }
+    //sub to modal values ==> push todo to list
+    function addTodo(arr) {
+        tasks.push(Todo(arr));
+        console.log(tasks);
+        events.publish('todoAdded', tasks);
+    }
+})();

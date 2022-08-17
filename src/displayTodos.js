@@ -1,14 +1,14 @@
 //Module to manipulate DOM for todos
-import Todo from './todo.js'
 import events from './mediator.js';
 
 const displayTodos = (() => {
-    const todoArr = []; //would be array from todo module
+    //Cache DOM
     const content = document.getElementById('todos');
 
-    events.subscribe('todoAdded', tasks => todoArr.push(tasks));
+    //Bind Events
+    events.subscribe('todoAdded', displayCards);
 
-    function displayCards() {
+    function displayCards(todoArr) {
         content.innerHTML = '';
         for (const item of todoArr) {
             const element = document.createElement('div');
@@ -19,21 +19,9 @@ const displayTodos = (() => {
                 element.appendChild(component);
             }
             content.appendChild(element);
-
-            //.subscribe('todoAdded', makeCard) where to put this logic?
         }
     }
 
-    // function makeCard() {
-    //     const newTodo = Todo('Toby', 'Mick', '14', 'Yeah', 'notes'); //would be new info from dom
-    //     todoArr.push(newTodo);
-    //     displayCards();
-    //     //sub to todo array then => create new card
-        
-    // }
-    return { displayCards };
+    // function removeCard(item)
+
 })();
-
-//send out signal that new todo created event
-
-export default displayTodos.displayCards;

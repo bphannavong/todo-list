@@ -1,7 +1,7 @@
 import './styles.css';
-import _ from './todo.js';
-import './displayTodos.js';
-import './modal.js'
-import './mediator.js';
+require('./modal.js');
+require('./todo.js');
+
+
 // const btn = document.querySelector('button');
 // btn.addEventListener('click', x);

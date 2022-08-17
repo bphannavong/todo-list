@@ -580,22 +580,18 @@ module.exports = styleTagTransform;
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _todo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todo.js */ "./src/todo.js");
-/* harmony import */ var _mediator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mediator.js */ "./src/mediator.js");
+/* harmony import */ var _mediator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mediator.js */ "./src/mediator.js");
 //Module to manipulate DOM for todos
 
 
-
 const displayTodos = (() => {
-    const todoArr = []; //would be array from todo module
+    //Cache DOM
     const content = document.getElementById('todos');
 
-    _mediator_js__WEBPACK_IMPORTED_MODULE_1__["default"].subscribe('todoAdded', tasks => todoArr.push(tasks));
+    //Bind Events
+    _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe('todoAdded', displayCards);
 
-    function displayCards() {
+    function displayCards(todoArr) {
         content.innerHTML = '';
         for (const item of todoArr) {
             const element = document.createElement('div');
@@ -606,24 +602,13 @@ const displayTodos = (() => {
                 element.appendChild(component);
             }
             content.appendChild(element);
-
-            //.subscribe('todoAdded', makeCard) where to put this logic?
         }
     }
 
-    // function makeCard() {
-    //     const newTodo = Todo('Toby', 'Mick', '14', 'Yeah', 'notes'); //would be new info from dom
-    //     todoArr.push(newTodo);
-    //     displayCards();
-    //     //sub to todo array then => create new card
-        
-    // }
-    return { displayCards };
+    // function removeCard(item)
+
 })();
 
-//send out signal that new todo created event
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (displayTodos.displayCards);
 
 /***/ }),
 
@@ -676,9 +661,6 @@ const events = {
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
 /* harmony import */ var _displayTodos_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./displayTodos.js */ "./src/displayTodos.js");
 /* harmony import */ var _mediator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mediator.js */ "./src/mediator.js");
 
@@ -693,27 +675,25 @@ const handleModal = (function () {
     const submitBtn = document.getElementById('submitBtn');
     
     //bind events
-    addBtn.addEventListener('click', _show);
-    addBtn.addEventListener('click', getValues); //test
-    closeModal.addEventListener('click', _hide);
+    addBtn.addEventListener('click', show);
+    closeModal.addEventListener('click', hide);
 
     submitBtn.addEventListener('click', getValues);
-    submitBtn.addEventListener('click', _hide);
+    submitBtn.addEventListener('click', hide);
 
     window.addEventListener('click', function (e) { //if window is clicked on modal (not modal content) then close modal
         if (e.target == modal) {
-            _hide();
+            hide();
         }
     });
 
-    function _show() {
+    function show() {
         modal.style.display = 'block';
     }
 
-    function _hide() {
+    function hide() {
          modal.style.display = 'none';
     }
-
 
     function getValues() {
         const name = document.getElementById('title').value;
@@ -722,12 +702,10 @@ const handleModal = (function () {
         const priority = document.getElementById('priority').value;
         //const values = values...
         // publish values => to pub
-        console.log('hey');
         _mediator_js__WEBPACK_IMPORTED_MODULE_1__["default"].publish('formSubmit', [name, description, dueDate, priority]);
     }
 })();
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (handleModal);
 
 
 
@@ -740,37 +718,29 @@ const handleModal = (function () {
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
 /* harmony import */ var _mediator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mediator.js */ "./src/mediator.js");
-// events.publish('todoCreated', todoObj);
-
-const tasks = [];
 
 
-const Todo = ([name, description, dueDate, priority]) => {
-    return {name, description, dueDate, priority};
-};
+const todo = (function() {
+    //task array with all todos
+    const tasks = [];
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Todo);
+    //bind events
+    _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe('formSubmit', addTodo);
 
-_mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe('formSubmit', addTodo);
-//sub to modal values ==> push todo to list
-function addTodo(arr) {
+     //Todo factory function
+     const Todo = ([name, description, dueDate, priority]) => {
+        return {name, description, dueDate, priority};
+    };
     
-    tasks.push(Todo(arr));
-    _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish('todoAdded', tasks);
-}
-// class Todo {
-//     constructor(name, description, dueDate, priority, notes) {
-//         this.name = name;
-//         this.description = description;
-//         this.dueDate = dueDate;
-//         this.priority = priority;
-//     }
-    
-// }
+    //sub to modal values ==> push todo to list
+    function addTodo(arr) {
+        tasks.push(Todo(arr));
+        console.log(tasks);
+        _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish('todoAdded', tasks);
+    }
+})();
+
 
 /***/ }),
 
@@ -926,13 +896,9 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
-/* harmony import */ var _todo_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todo.js */ "./src/todo.js");
-/* harmony import */ var _displayTodos_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./displayTodos.js */ "./src/displayTodos.js");
-/* harmony import */ var _modal_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modal.js */ "./src/modal.js");
-/* harmony import */ var _mediator_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./mediator.js */ "./src/mediator.js");
 
-
-
+__webpack_require__(/*! ./modal.js */ "./src/modal.js");
+__webpack_require__(/*! ./todo.js */ "./src/todo.js");
 
 
 // const btn = document.querySelector('button');
