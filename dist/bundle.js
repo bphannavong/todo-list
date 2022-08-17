@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/styles.css":
@@ -8,6 +7,7 @@
   \**************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -39,6 +39,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n    font-family: 'Roboto
   \*****************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /*
@@ -150,6 +151,7 @@ module.exports = function (cssWithMappingToString) {
   \********************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = function (url, options) {
@@ -188,6 +190,7 @@ module.exports = function (url, options) {
   \************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = function (item) {
@@ -219,6 +222,7 @@ module.exports = function (item) {
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -273,6 +277,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \****************************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 var stylesInDOM = [];
@@ -386,6 +391,7 @@ module.exports = function (list, options) {
   \********************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 var memo = {};
@@ -434,6 +440,7 @@ module.exports = insertBySelector;
   \**********************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -454,6 +461,7 @@ module.exports = insertStyleElement;
   \**********************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -475,6 +483,7 @@ module.exports = setAttributesWithoutAttributes;
   \***************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -554,6 +563,7 @@ module.exports = domAPI;
   \*********************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -579,6 +589,7 @@ module.exports = styleTagTransform;
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -587,10 +598,8 @@ __webpack_require__.r(__webpack_exports__);
 //Module to manipulate DOM for todos
 
 
-
-
 const displayTodos = (() => {
-    let todoArr = [(0,_todo_js__WEBPACK_IMPORTED_MODULE_0__["default"])('steve', 'a', 'v', 'v', 'notes'), (0,_todo_js__WEBPACK_IMPORTED_MODULE_0__["default"])('Joe', 'aa', 's', '14', 'notes')]; //would be array from todo module
+    let todoArr = [(0,_todo_js__WEBPACK_IMPORTED_MODULE_0__["default"])('steve', 'a', 'v', 'v'), (0,_todo_js__WEBPACK_IMPORTED_MODULE_0__["default"])('Joe', 'aa', 's', '14')]; //would be array from todo module
     const content = document.getElementById('todos');
 
     function displayCards() {
@@ -611,6 +620,7 @@ const displayTodos = (() => {
         const newTodo = (0,_todo_js__WEBPACK_IMPORTED_MODULE_0__["default"])('Toby', 'Mick', '14', 'Yeah', 'notes'); //would be new info from dom
         todoArr.push(newTodo);
         displayCards();
+        //sub to todo array then => create new card
     }
     return { makeCard };
 })();
@@ -625,38 +635,9 @@ const displayTodos = (() => {
 /*!**********************!*\
   !*** ./src/modal.js ***!
   \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _displayTodos_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./displayTodos.js */ "./src/displayTodos.js");
-
-
-const modal = document.getElementById('taskModal');
-const closeModal = document.querySelector('.close');
-const addBtn = document.getElementById('addBtn');
-const submitBtn = document.getElementById('submitBtn');
-
-addBtn.addEventListener('click', function() {
-    modal.style.display = 'block';
-});
-
-closeModal.addEventListener('click', function() {
-    modal.style.display = 'none';
-});
-
-submitBtn.addEventListener('click', _displayTodos_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
-submitBtn.addEventListener('click', function() {
-    modal.style.display = 'none'
-});
-
-window.addEventListener('click', function (e) { //if window is clicked on modal (not modal content) then close modal
-    console.log(e.target);
-    if (e.target == modal) {
-        modal.style.display = 'none';
-    }
-});
-
-
+throw new Error("Module parse failed: Unexpected token (30:29)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| \n|     function getValues() {\n>         const values = values...\n|         // publish values => to pub\n|     }");
 
 /***/ }),
 
@@ -666,30 +647,34 @@ window.addEventListener('click', function (e) { //if window is clicked on modal 
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 // events.publish('todoCreated', todoObj);
+const tasks = [];
 
-const Todo = (name, description, dueDate, priority, notes) => {
-    return {name, description, dueDate, priority, notes};
+const Todo = (name, description, dueDate, priority) => {
+    return {name, description, dueDate, priority};
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Todo);
 
 
+//sub to modal values ==> push todo to list
+function addTodo(name, description, dueDate, priority) {
+    tasks.push(Todo(name, description, dueDate, priority));
+}
 // class Todo {
 //     constructor(name, description, dueDate, priority, notes) {
 //         this.name = name;
 //         this.description = description;
 //         this.dueDate = dueDate;
 //         this.priority = priority;
-//         this.notes = notes;
 //     }
     
 // }
-
 
 /***/ }),
 
@@ -699,6 +684,7 @@ const Todo = (name, description, dueDate, priority, notes) => {
   \***************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 module.exports = __webpack_require__.p + "fc2b5060f7accec5cf74.ttf";
 
 /***/ })
@@ -838,8 +824,9 @@ module.exports = __webpack_require__.p + "fc2b5060f7accec5cf74.ttf";
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/

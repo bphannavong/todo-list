@@ -1,10 +1,8 @@
 //Module to manipulate DOM for todos
-
-
 import Todo from './todo.js'
 
 const displayTodos = (() => {
-    let todoArr = [Todo('steve', 'a', 'v', 'v', 'notes'), Todo('Joe', 'aa', 's', '14', 'notes')]; //would be array from todo module
+    let todoArr = [Todo('steve', 'a', 'v', 'v'), Todo('Joe', 'aa', 's', '14')]; //would be array from todo module
     const content = document.getElementById('todos');
 
     function displayCards() {
@@ -25,6 +23,7 @@ const displayTodos = (() => {
         const newTodo = Todo('Toby', 'Mick', '14', 'Yeah', 'notes'); //would be new info from dom
         todoArr.push(newTodo);
         displayCards();
+        //sub to todo array then => create new card
     }
     return { makeCard };
 })();

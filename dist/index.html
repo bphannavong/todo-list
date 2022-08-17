@@ -39,21 +39,22 @@
                     <button type='reset' class='close'>&times;</button>
                     <div>
                         <label for="title">Title: </label>
-                        <input type="text" id="title" name="title">
+                        <input type="text" id="title" name="name">
                     </div>
                     <div>
-                        <label for="author">Author: </label>
-                        <input type="text" id="author" name="author">
+                        <label for="Description">Description: </label>
+                        <input type="textarea" id="author" name="author">
                     </div>
                     <div>
-                        <label for="pages">Pages: </label>
-                        <input type="num" id='pages' name='pages' min="1">
+                        <label for="dueDate">Due Date: </label>
+                        <input type="date" id='dueDate' name='dueDate'>
                     </div>
                     <div>
-                        <label for="read">Read? </label>
-                        <select name="read" id="read">
-                            <option value="read">Read</option>
-                            <option value="not-read">Not Read</option>
+                        <label for="priority">Priority? </label>
+                        <select name="priority" id="priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
                         </select>
                     </div>
                     <button type="reset" id="submitBtn">Add Book</button>
