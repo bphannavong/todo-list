@@ -12,17 +12,24 @@ const displayTodos = (() => {
         content.innerHTML = '';
         for (const item of todoArr) {
             const element = document.createElement('div');
-            const removeBtn = document.createElement('button', {type: 'button'});
-            removeBtn.addEventListener('click', removeCard);
-            element.classList.add('card');
             element.setAttribute('id', item.name);
-            element.appendChild(removeBtn);
-            
+            element.classList.add('card');
+
+            const completed = document.createElement('input'); //When checked, changed class of card to completed --> cross out name and change color or card
+            completed.setAttribute('type', 'checkbox');
+            element.appendChild(completed);
+
             for (const prop in item) {
                 const component = document.createElement('div');
                 component.innerHTML = item[prop];
                 element.appendChild(component);
             }
+
+            const removeBtn = document.createElement('button');
+            removeBtn.setAttribute('type', 'button');
+            removeBtn.innerHTML = 'del';
+            removeBtn.addEventListener('click', removeCard);
+            element.appendChild(removeBtn);
             content.appendChild(element);
         }
     }
