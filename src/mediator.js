@@ -1,6 +1,6 @@
 //pubsub events pattern
 
-let events = {
+const events = {
     events: {},
     subscribe: function(eventName, fn) {
         this.events[eventName] = this.events[eventName] || [];
@@ -24,3 +24,6 @@ let events = {
         }
     }
 };
+
+
+export default events;
