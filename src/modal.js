@@ -12,7 +12,6 @@ const handleModal = (function () {
     //bind events
     addBtn.addEventListener('click', show);
     closeModal.addEventListener('click', hide);
-
     submitBtn.addEventListener('click', getValues);
     submitBtn.addEventListener('click', hide);
 
@@ -37,7 +36,7 @@ const handleModal = (function () {
         const priority = document.getElementById('priority').value;
         //const values = values...
         // publish values => to pub
-        events.publish('formSubmit', [name, description, dueDate, priority]);
+        events.publish('formSubmitted', [name, description, dueDate, priority]);
     }
 })();
 

@@ -2,10 +2,11 @@ import events from './mediator.js';
 
 const todo = (function() {
     //task array with all todos
-    const tasks = [];
+    let tasks = [];
 
     //bind events
-    events.subscribe('formSubmit', addTodo);
+    events.subscribe('formSubmitted', addTodo);
+    events.subscribe('cardRemoved', removeTodo);
 
      //Todo factory function
      const Todo = ([name, description, dueDate, priority]) => {
@@ -13,9 +14,13 @@ const todo = (function() {
     };
     
     //sub to modal values ==> push todo to list
-    function addTodo(arr) {
-        tasks.push(Todo(arr));
-        console.log(tasks);
-        events.publish('todoAdded', tasks);
+    function addTodo(newValues) {
+        tasks.push(Todo(newValues));
+        events.publish('tasksUpdated', tasks);
+    }
+
+    function removeTodo(todoName) {
+        tasks = tasks.filter(item => item.name !== todoName);
+        events.publish('tasksUpdated', tasks);
     }
 })();

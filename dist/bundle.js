@@ -589,14 +589,16 @@ const displayTodos = (() => {
     const content = document.getElementById('todos');
 
     //Bind Events
-    _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe('todoAdded', displayCards);
+    _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe('tasksUpdated', displayCards);
 
     function displayCards(todoArr) {
         content.innerHTML = '';
         for (const item of todoArr) {
             const element = document.createElement('div');
             const removeBtn = document.createElement('button', {type: 'button'});
+            removeBtn.addEventListener('click', removeCard);
             element.classList.add('card');
+            element.setAttribute('id', item.name);
             element.appendChild(removeBtn);
             
             for (const prop in item) {
@@ -608,8 +610,9 @@ const displayTodos = (() => {
         }
     }
 
-    function removeCard(item) {
-
+    function removeCard(e) {
+        const removed = e.target.closest('div').id; //find name of todo chosen to remove
+        _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish('cardRemoved', removed); //published id/name of removed todo
     }
 
 })();
@@ -682,7 +685,6 @@ const handleModal = (function () {
     //bind events
     addBtn.addEventListener('click', show);
     closeModal.addEventListener('click', hide);
-
     submitBtn.addEventListener('click', getValues);
     submitBtn.addEventListener('click', hide);
 
@@ -707,7 +709,7 @@ const handleModal = (function () {
         const priority = document.getElementById('priority').value;
         //const values = values...
         // publish values => to pub
-        _mediator_js__WEBPACK_IMPORTED_MODULE_1__["default"].publish('formSubmit', [name, description, dueDate, priority]);
+        _mediator_js__WEBPACK_IMPORTED_MODULE_1__["default"].publish('formSubmitted', [name, description, dueDate, priority]);
     }
 })();
 
@@ -728,10 +730,11 @@ __webpack_require__.r(__webpack_exports__);
 
 const todo = (function() {
     //task array with all todos
-    const tasks = [];
+    let tasks = [];
 
     //bind events
-    _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe('formSubmit', addTodo);
+    _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe('formSubmitted', addTodo);
+    _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe('cardRemoved', removeTodo);
 
      //Todo factory function
      const Todo = ([name, description, dueDate, priority]) => {
@@ -739,10 +742,14 @@ const todo = (function() {
     };
     
     //sub to modal values ==> push todo to list
-    function addTodo(arr) {
-        tasks.push(Todo(arr));
-        console.log(tasks);
-        _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish('todoAdded', tasks);
+    function addTodo(newValues) {
+        tasks.push(Todo(newValues));
+        _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish('tasksUpdated', tasks);
+    }
+
+    function removeTodo(todoName) {
+        tasks = tasks.filter(item => item.name !== todoName);
+        _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish('tasksUpdated', tasks);
     }
 })();
 

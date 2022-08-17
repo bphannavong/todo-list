@@ -6,14 +6,16 @@ const displayTodos = (() => {
     const content = document.getElementById('todos');
 
     //Bind Events
-    events.subscribe('todoAdded', displayCards);
+    events.subscribe('tasksUpdated', displayCards);
 
     function displayCards(todoArr) {
         content.innerHTML = '';
         for (const item of todoArr) {
             const element = document.createElement('div');
             const removeBtn = document.createElement('button', {type: 'button'});
+            removeBtn.addEventListener('click', removeCard);
             element.classList.add('card');
+            element.setAttribute('id', item.name);
             element.appendChild(removeBtn);
             
             for (const prop in item) {
@@ -25,8 +27,9 @@ const displayTodos = (() => {
         }
     }
 
-    function removeCard(item) {
-
+    function removeCard(e) {
+        const removed = e.target.closest('div').id; //find name of todo chosen to remove
+        events.publish('cardRemoved', removed); //published id/name of removed todo
     }
 
 })();
