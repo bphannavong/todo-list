@@ -12,7 +12,10 @@ const displayTodos = (() => {
         content.innerHTML = '';
         for (const item of todoArr) {
             const element = document.createElement('div');
+            const removeBtn = document.createElement('button', {type: 'button'});
             element.classList.add('card');
+            element.appendChild(removeBtn);
+            
             for (const prop in item) {
                 const component = document.createElement('div');
                 component.innerHTML = item[prop];
@@ -22,6 +25,8 @@ const displayTodos = (() => {
         }
     }
 
-    // function removeCard(item)
+    function removeCard(item) {
+
+    }
 
 })();
