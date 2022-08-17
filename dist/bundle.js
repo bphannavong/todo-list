@@ -26,7 +26,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n    font-family: 'Roboto';\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('truetype');\n}\n\n* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n\nhtml {\n    font-family: 'Roboto', Arial, Helvetica, sans-serif;\n    font-size: 16px;\n}\n\nmain {\n    display: grid;\n    grid-template-rows: 1fr 10fr 0.2fr;\n    \n    position: relative;\n    width: 100vw;\n    height: 100vh;\n}\n\n/* Header */\n#header {\n    display: grid;\n    place-items: end center;\n    padding: 1rem;\n}\n\n\n/* Application section */\n#app {\n    display: grid;\n    grid-template-columns: minmax(max-content, 1fr) 5fr;\n    place-self: center;\n    border-radius: 5px;\n\n    width: 90%;\n    height: 90%;\n    padding: 1rem;\n\n    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n}\n\n#app > div { \n    border: 1px solid black;\n    \n}\n/* Sidebar of App */\n\n#sidebar {\n    display: grid;\n    place-content: start;\n}\n\n#sidebar > div {\n    display: grid;\n    grid-auto-flow: row;\n    \n    gap: 1rem;\n    margin: 1rem;\n}\n\n#sidebar > div > div {\n    width: 100%;\n    padding: 0.5rem 3rem;\n}\n\n#sidebar > div > div:hover {\n    border-radius: 5px;\n    background-color: lightgray;\n}\n\nhr {\n    margin: 1rem;\n}\n\n\n\n/* Main contents of App */\n#main-content {\n    display: grid;\n    place-items: start;\n    overflow-y: scroll;\n}\n\n#main-content button {\n    place-self: end;\n    margin: 1rem;\n    border: none;\n    border-radius: 50%;\n    width: 3rem;\n    height: 3rem;\n    background: rgb(60, 184, 184);\n}\n\n#todos {\n    display: grid;\n    justify-self: center;\n   \n    \n    border: 1px solid red;\n    width: 90%;\n    \n    gap: 1rem;\n    margin: 1rem;\n}\n\n.card {\n    display: grid;\n    border: 1px solid black;\n\n    width: 100%;\n\n    place-items: center;\n    padding: 1rem;\n}\n\n\n\n\n/* Footer */\n#footer {\n    text-align: center;\n    background-color: aquamarine;\n}\n", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,qBAAqB;IACrB,+DAA0D;AAC9D;;AAEA;IACI,SAAS;IACT,UAAU;IACV,sBAAsB;AAC1B;;AAEA;IACI,mDAAmD;IACnD,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,kCAAkC;;IAElC,kBAAkB;IAClB,YAAY;IACZ,aAAa;AACjB;;AAEA,WAAW;AACX;IACI,aAAa;IACb,uBAAuB;IACvB,aAAa;AACjB;;;AAGA,wBAAwB;AACxB;IACI,aAAa;IACb,mDAAmD;IACnD,kBAAkB;IAClB,kBAAkB;;IAElB,UAAU;IACV,WAAW;IACX,aAAa;;IAEb,qDAAqD;AACzD;;AAEA;IACI,uBAAuB;;AAE3B;AACA,mBAAmB;;AAEnB;IACI,aAAa;IACb,oBAAoB;AACxB;;AAEA;IACI,aAAa;IACb,mBAAmB;;IAEnB,SAAS;IACT,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,oBAAoB;AACxB;;AAEA;IACI,kBAAkB;IAClB,2BAA2B;AAC/B;;AAEA;IACI,YAAY;AAChB;;;;AAIA,yBAAyB;AACzB;IACI,aAAa;IACb,kBAAkB;IAClB,kBAAkB;AACtB;;AAEA;IACI,eAAe;IACf,YAAY;IACZ,YAAY;IACZ,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,6BAA6B;AACjC;;AAEA;IACI,aAAa;IACb,oBAAoB;;;IAGpB,qBAAqB;IACrB,UAAU;;IAEV,SAAS;IACT,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,uBAAuB;;IAEvB,WAAW;;IAEX,mBAAmB;IACnB,aAAa;AACjB;;;;;AAKA,WAAW;AACX;IACI,kBAAkB;IAClB,4BAA4B;AAChC","sourcesContent":["@font-face {\n    font-family: 'Roboto';\n    src: url('./assets/Roboto-Regular.ttf') format('truetype');\n}\n\n* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n\nhtml {\n    font-family: 'Roboto', Arial, Helvetica, sans-serif;\n    font-size: 16px;\n}\n\nmain {\n    display: grid;\n    grid-template-rows: 1fr 10fr 0.2fr;\n    \n    position: relative;\n    width: 100vw;\n    height: 100vh;\n}\n\n/* Header */\n#header {\n    display: grid;\n    place-items: end center;\n    padding: 1rem;\n}\n\n\n/* Application section */\n#app {\n    display: grid;\n    grid-template-columns: minmax(max-content, 1fr) 5fr;\n    place-self: center;\n    border-radius: 5px;\n\n    width: 90%;\n    height: 90%;\n    padding: 1rem;\n\n    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n}\n\n#app > div { \n    border: 1px solid black;\n    \n}\n/* Sidebar of App */\n\n#sidebar {\n    display: grid;\n    place-content: start;\n}\n\n#sidebar > div {\n    display: grid;\n    grid-auto-flow: row;\n    \n    gap: 1rem;\n    margin: 1rem;\n}\n\n#sidebar > div > div {\n    width: 100%;\n    padding: 0.5rem 3rem;\n}\n\n#sidebar > div > div:hover {\n    border-radius: 5px;\n    background-color: lightgray;\n}\n\nhr {\n    margin: 1rem;\n}\n\n\n\n/* Main contents of App */\n#main-content {\n    display: grid;\n    place-items: start;\n    overflow-y: scroll;\n}\n\n#main-content button {\n    place-self: end;\n    margin: 1rem;\n    border: none;\n    border-radius: 50%;\n    width: 3rem;\n    height: 3rem;\n    background: rgb(60, 184, 184);\n}\n\n#todos {\n    display: grid;\n    justify-self: center;\n   \n    \n    border: 1px solid red;\n    width: 90%;\n    \n    gap: 1rem;\n    margin: 1rem;\n}\n\n.card {\n    display: grid;\n    border: 1px solid black;\n\n    width: 100%;\n\n    place-items: center;\n    padding: 1rem;\n}\n\n\n\n\n/* Footer */\n#footer {\n    text-align: center;\n    background-color: aquamarine;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n    font-family: 'Roboto';\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('truetype');\n}\n\n* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n\nhtml {\n    font-family: 'Roboto', Arial, Helvetica, sans-serif;\n    font-size: 16px;\n}\n\nmain {\n    display: grid;\n    grid-template-rows: 1fr 10fr 0.2fr;\n    \n    position: relative;\n    width: 100vw;\n    height: 100vh;\n}\n\n/* Header */\n#header {\n    display: grid;\n    place-items: end center;\n    padding: 1rem;\n}\n\n\n/* Application section */\n#app {\n    display: grid;\n    grid-template-columns: minmax(max-content, 1fr) 5fr;\n    place-self: center;\n    border-radius: 5px;\n\n    width: 90%;\n    height: 90%;\n    padding: 1rem;\n\n    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n}\n\n/* Sidebar of App */\n\n#sidebar {\n    display: grid;\n    place-content: start;\n    border-right: 1px solid gray;\n}\n\n#sidebar > div {\n    display: grid;\n    grid-auto-flow: row;\n    \n    gap: 1rem;\n    margin: 1rem;\n}\n\n#sidebar > div > div {\n    width: 100%;\n    padding: 0.5rem 3rem;\n}\n\n#sidebar > div > div:hover {\n    border-radius: 5px;\n    background-color: lightgray;\n}\n\nhr {\n    margin: 1rem;\n}\n\n\n\n/* Main contents of App */\n#main-content {\n    display: grid;\n    place-items: start;\n    overflow-y: scroll;\n}\n\n#main-content button {\n    place-self: end;\n    margin: 1rem;\n    border: none;\n    border-radius: 50%;\n    width: 3rem;\n    height: 3rem;\n    background: rgb(60, 184, 184);\n}\n\n#todos {\n    display: grid;\n    justify-self: center;\n   \n    \n    border: 1px solid red;\n    width: 90%;\n    \n    gap: 1rem;\n    margin: 1rem;\n}\n\n.card {\n    display: grid;\n    border: 1px solid black;\n\n    width: 100%;\n\n    place-items: center;\n    padding: 1rem;\n}\n\n\n\n\n/* Footer */\n#footer {\n    text-align: center;\n    background-color: aquamarine;\n}\n", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,qBAAqB;IACrB,+DAA0D;AAC9D;;AAEA;IACI,SAAS;IACT,UAAU;IACV,sBAAsB;AAC1B;;AAEA;IACI,mDAAmD;IACnD,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,kCAAkC;;IAElC,kBAAkB;IAClB,YAAY;IACZ,aAAa;AACjB;;AAEA,WAAW;AACX;IACI,aAAa;IACb,uBAAuB;IACvB,aAAa;AACjB;;;AAGA,wBAAwB;AACxB;IACI,aAAa;IACb,mDAAmD;IACnD,kBAAkB;IAClB,kBAAkB;;IAElB,UAAU;IACV,WAAW;IACX,aAAa;;IAEb,qDAAqD;AACzD;;AAEA,mBAAmB;;AAEnB;IACI,aAAa;IACb,oBAAoB;IACpB,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,mBAAmB;;IAEnB,SAAS;IACT,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,oBAAoB;AACxB;;AAEA;IACI,kBAAkB;IAClB,2BAA2B;AAC/B;;AAEA;IACI,YAAY;AAChB;;;;AAIA,yBAAyB;AACzB;IACI,aAAa;IACb,kBAAkB;IAClB,kBAAkB;AACtB;;AAEA;IACI,eAAe;IACf,YAAY;IACZ,YAAY;IACZ,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,6BAA6B;AACjC;;AAEA;IACI,aAAa;IACb,oBAAoB;;;IAGpB,qBAAqB;IACrB,UAAU;;IAEV,SAAS;IACT,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,uBAAuB;;IAEvB,WAAW;;IAEX,mBAAmB;IACnB,aAAa;AACjB;;;;;AAKA,WAAW;AACX;IACI,kBAAkB;IAClB,4BAA4B;AAChC","sourcesContent":["@font-face {\n    font-family: 'Roboto';\n    src: url('./assets/Roboto-Regular.ttf') format('truetype');\n}\n\n* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n\nhtml {\n    font-family: 'Roboto', Arial, Helvetica, sans-serif;\n    font-size: 16px;\n}\n\nmain {\n    display: grid;\n    grid-template-rows: 1fr 10fr 0.2fr;\n    \n    position: relative;\n    width: 100vw;\n    height: 100vh;\n}\n\n/* Header */\n#header {\n    display: grid;\n    place-items: end center;\n    padding: 1rem;\n}\n\n\n/* Application section */\n#app {\n    display: grid;\n    grid-template-columns: minmax(max-content, 1fr) 5fr;\n    place-self: center;\n    border-radius: 5px;\n\n    width: 90%;\n    height: 90%;\n    padding: 1rem;\n\n    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n}\n\n/* Sidebar of App */\n\n#sidebar {\n    display: grid;\n    place-content: start;\n    border-right: 1px solid gray;\n}\n\n#sidebar > div {\n    display: grid;\n    grid-auto-flow: row;\n    \n    gap: 1rem;\n    margin: 1rem;\n}\n\n#sidebar > div > div {\n    width: 100%;\n    padding: 0.5rem 3rem;\n}\n\n#sidebar > div > div:hover {\n    border-radius: 5px;\n    background-color: lightgray;\n}\n\nhr {\n    margin: 1rem;\n}\n\n\n\n/* Main contents of App */\n#main-content {\n    display: grid;\n    place-items: start;\n    overflow-y: scroll;\n}\n\n#main-content button {\n    place-self: end;\n    margin: 1rem;\n    border: none;\n    border-radius: 50%;\n    width: 3rem;\n    height: 3rem;\n    background: rgb(60, 184, 184);\n}\n\n#todos {\n    display: grid;\n    justify-self: center;\n   \n    \n    border: 1px solid red;\n    width: 90%;\n    \n    gap: 1rem;\n    margin: 1rem;\n}\n\n.card {\n    display: grid;\n    border: 1px solid black;\n\n    width: 100%;\n\n    place-items: center;\n    padding: 1rem;\n}\n\n\n\n\n/* Footer */\n#footer {\n    text-align: center;\n    background-color: aquamarine;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -581,30 +581,43 @@ module.exports = styleTagTransform;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ makeCard)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _todo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todo.js */ "./src/todo.js");
+//Module to manipulate DOM for todos
 
 
-const todoArr = [new _todo_js__WEBPACK_IMPORTED_MODULE_0__["default"]('steve', 'a', 'v', 'v', 'notes')];
 
-const content = document.getElementById('todos');
-function makeCard() {
-    for (const item of todoArr){
-        const element = document.createElement('div');
-        element.classList.add('card');
 
-        for (const prop in item) {
-            const component = document.createElement('div');
-            component.innerHTML = item[prop];
-            element.appendChild(component);
+const displayTodos = (() => {
+    let todoArr = [(0,_todo_js__WEBPACK_IMPORTED_MODULE_0__["default"])('steve', 'a', 'v', 'v', 'notes'), (0,_todo_js__WEBPACK_IMPORTED_MODULE_0__["default"])('Joe', 'aa', 's', '14', 'notes')]; //would be array from todo module
+    const content = document.getElementById('todos');
+
+    function displayCards() {
+        content.innerHTML = '';
+        for (const item of todoArr) {
+            const element = document.createElement('div');
+            element.classList.add('card');
+            for (const prop in item) {
+                const component = document.createElement('div');
+                component.innerHTML = item[prop];
+                element.appendChild(component);
+            }
+            content.appendChild(element);
         }
-
-        content.appendChild(element);
     }
-}
+
+    function makeCard() {
+        const newTodo = (0,_todo_js__WEBPACK_IMPORTED_MODULE_0__["default"])('Toby', 'Mick', '14', 'Yeah', 'notes'); //would be new info from dom
+        todoArr.push(newTodo);
+        displayCards();
+    }
+    return { makeCard };
+})();
 
 //send out signal that new todo created event
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (displayTodos.makeCard);
 
 /***/ }),
 
@@ -616,19 +629,28 @@ function makeCard() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Todo)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 // events.publish('todoCreated', todoObj);
 
-class Todo {
-    constructor(name, description, dueDate, priority, notes) {
-        this.name = name;
-        this.description = description;
-        this.dueDate = dueDate;
-        this.priority = priority;
-        this.notes = notes;
-    }
-}
+const Todo = (name, description, dueDate, priority, notes) => {
+    return {name, description, dueDate, priority, notes};
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Todo);
+
+
+// class Todo {
+//     constructor(name, description, dueDate, priority, notes) {
+//         this.name = name;
+//         this.description = description;
+//         this.dueDate = dueDate;
+//         this.priority = priority;
+//         this.notes = notes;
+//     }
+    
+// }
+
 
 /***/ }),
 
