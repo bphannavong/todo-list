@@ -1,4 +1,4 @@
-import makeCard from './displayTodos.js';
+import render from './displayTodos.js';
 import events from './mediator.js';
 
 const handleModal = (function () {
@@ -9,27 +9,28 @@ const handleModal = (function () {
     const addBtn = document.getElementById('addBtn');
     const submitBtn = document.getElementById('submitBtn');
     
-    const show = function() {
-        modal.style.display = 'block';
-    }
     //bind events
-    addBtn.addEventListener('click', show);
-
-    closeModal.addEventListener('click', function () {
-        modal.style.display = 'none';
-    });
+    addBtn.addEventListener('click', _show);
+    addBtn.addEventListener('click', getValues); //test
+    closeModal.addEventListener('click', _hide);
 
     submitBtn.addEventListener('click', getValues);
-    submitBtn.addEventListener('click', function () {
-        modal.style.display = 'none'
-    });
+    submitBtn.addEventListener('click', _hide);
 
     window.addEventListener('click', function (e) { //if window is clicked on modal (not modal content) then close modal
-        console.log(e.target);
         if (e.target == modal) {
-            modal.style.display = 'none';
+            _hide();
         }
-    })
+    });
+
+    function _show() {
+        modal.style.display = 'block';
+    }
+
+    function _hide() {
+         modal.style.display = 'none';
+    }
+
 
     function getValues() {
         const name = document.getElementById('title').value;
@@ -38,12 +39,10 @@ const handleModal = (function () {
         const priority = document.getElementById('priority').value;
         //const values = values...
         // publish values => to pub
-
+        console.log('hey');
         events.publish('formSubmit', [name, description, dueDate, priority]);
     }
-
-    return {};
-});
+})();
 
 export default handleModal;
 

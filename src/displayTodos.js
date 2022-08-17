@@ -36,4 +36,4 @@ const displayTodos = (() => {
 
 //send out signal that new todo created event
 
-export default displayTodos.makeCard;
+export default displayTodos.displayCards;
