@@ -1,215 +1,209 @@
 @font-face {
-    font-family: 'Roboto';
-    src: url('./assets/Roboto-Regular.ttf') format('truetype');
+  font-family: "Roboto";
+  src: url("./assets/Roboto-Regular.ttf") format("truetype");
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    font-size: 16px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 16px;
 }
 
 main {
-    display: grid;
-    grid-template-rows: 1fr 10fr 0.2fr;
-    
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 10fr 0.2fr;
+
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
 /* Header */
 #header {
-    display: grid;
-    place-items: end center;
-    padding: 1rem;
+  display: grid;
+  place-items: end center;
+  padding: 1rem;
 }
-
 
 /* Application section */
 #app {
-    display: grid;
-    grid-template-columns: minmax(max-content, 1fr) 5fr;
-    place-self: center;
-    border-radius: 5px;
+  display: grid;
+  grid-template-columns: minmax(max-content, 1fr) 5fr;
+  place-self: center;
+  border-radius: 5px;
 
-    width: 90%;
-    height: 90%;
-    padding: 1rem;
+  width: 90%;
+  height: 90%;
+  padding: 1rem;
 
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 /* Sidebar of App */
 
 #sidebar {
-    display: grid;
-    place-content: start;
-    border-right: 1px solid gray;
+  display: grid;
+  place-content: start;
+  border-right: 1px solid gray;
 }
 
 #sidebar > div {
-    display: grid;
-    grid-auto-flow: row;
-    
-    gap: 1rem;
-    margin: 1rem;
+  display: grid;
+  grid-auto-flow: row;
+
+  gap: 1rem;
+  margin: 1rem;
 }
 
 #sidebar > div > div {
-    width: 100%;
-    padding: 0.5rem 3rem;
+  width: 100%;
+  padding: 0.5rem 3rem;
 }
 
 #sidebar > div > div:hover {
-    border-radius: 5px;
-    background-color: lightgray;
+  border-radius: 5px;
+  background-color: lightgray;
 }
 
 hr {
-    margin: 1rem;
+  margin: 1rem;
 }
-
-
 
 /* Main contents of App */
 #main-content {
-    display: grid;
-    place-items: start;
-    overflow-y: scroll;
+  display: grid;
+  place-items: start;
+  overflow-y: scroll;
 }
 
 #main-content > button {
-    place-self: end;
-    margin: 1rem;
-    border: none;
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-    background: rgb(60, 184, 184);
+  place-self: end;
+  margin: 1rem;
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  background: rgb(60, 184, 184);
 }
 
 #todos {
-    display: grid;
-    justify-self: center;
-   
-    
-    border: 1px solid red;
-    width: 90%;
-    
-    gap: 1rem;
-    margin: 1rem;
+  display: grid;
+  justify-self: center;
+
+  border: 1px solid red;
+  width: 90%;
+
+  gap: 1rem;
+  margin: 1rem;
 }
 
 .card {
-    display: grid;
-    grid-template-columns: 1fr 10fr 1fr 1fr 1fr 1fr;
-    border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr 1fr 1fr 1fr;
+  border: 1px solid black;
 
-    width: 100%;
+  width: 100%;
 
-    align-items: center;
-    justify-items: end;
-    padding: 1rem;
+  align-items: center;
+  justify-items: end;
+  padding: 1rem;
 }
-.card > input[type='checkbox'] {
-    /* hide default appearance */
-    --webkit-appearance: none; 
-    appearance: none;
-    transition: box-shadow .3s;
-    background: lightgrey;
-    /* change cursor to pointer hand */
-    cursor: pointer; 
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
+.card > input[type="checkbox"] {
+  /* hide default appearance */
+  --webkit-appearance: none;
+  appearance: none;
+  transition: box-shadow 0.3s;
+  background: lightgrey;
+  /* change cursor to pointer hand */
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
 
-    justify-self: start;
+  justify-self: start;
 }
 
-.card > input[type='checkbox']:checked {
-    box-shadow: inset 0 0 0 25px green;
+.card > input[type="checkbox"]:checked {
+  box-shadow: inset 0 0 0 25px green;
 }
 .card > button:last-child {
-    width: 10px;
-    height: 10px;
-    justify-self: end;
+  width: 10px;
+  height: 10px;
+  justify-self: end;
 }
 
-.card div:first-of-type{
-    justify-self: start;
+.card div:first-of-type {
+  justify-self: start;
 }
 /* Modal popup for new task */
 
 .modal {
-    display: none; /* hidden by default */
-    position: fixed; /*stay in place in relation to the viewport (stays even when scrolled)*/
-    z-index: 1; /* sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* enable scroll if needed */
-    background-color: rgb(0, 0, 0); /*fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: none; /* hidden by default */
+  position: fixed; /*stay in place in relation to the viewport (stays even when scrolled)*/
+  z-index: 1; /* sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* enable scroll if needed */
+  background-color: rgb(0, 0, 0); /*fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 .modal-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fefefe;
-    border: none;
-    border-radius: 10px;
-    margin: 15% auto; /*15% from the top and centered */
-    padding: 1rem;
-    gap: 2rem;
-    border: 1px solid #888;
-    width: 25%;
-    min-width: 22rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fefefe;
+  border: none;
+  border-radius: 10px;
+  margin: 15% auto; /*15% from the top and centered */
+  padding: 1rem;
+  gap: 2rem;
+  border: 1px solid #888;
+  width: 25%;
+  min-width: 22rem;
 }
 
 .modal-content div {
-    width: 80%;
-    margin-bottom: 0.5rem;
-    
+  width: 80%;
+  margin-bottom: 0.5rem;
 }
 .close {
-    color: #aaa;
-    float: right;
-    align-self: end;
-    font-size: 28px;
-    font-weight: bold;
-    border: none;
-    background-color: #fefefe;
+  color: #aaa;
+  float: right;
+  align-self: end;
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  background-color: #fefefe;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.modal select, 
+.modal select,
 .modal input {
-    appearance: none;
-    width: 100%;
-    height: 2rem;
-    padding-left: 1rem;
-    border-radius: 5px;
-    border: none;
-    background-color: lightgray;
-    
+  appearance: none;
+  width: 100%;
+  height: 2rem;
+  padding-left: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: lightgray;
 }
 
 /* Footer */
 #footer {
-    text-align: center;
-    background-color: aquamarine;
+  text-align: center;
+  background-color: aquamarine;
 }
