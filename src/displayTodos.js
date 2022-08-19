@@ -5,7 +5,7 @@
 /* eslint-disable no-restricted-syntax */
 // Module to manipulate DOM for todos
 import events from "./mediator.js";
-import { format } from "date-fns";
+import { format, toLocaleString } from "date-fns";
 
 const displayTodos = (() => {
   // Cache DOM

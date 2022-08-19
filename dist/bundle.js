@@ -3985,6 +3985,7 @@ const handleModal = (function () {
   taskSelect.addEventListener("click", function (e) {
     e.target.style.color = "red";
   });
+
   function show() {
     modal.style.display = "block";
   }
