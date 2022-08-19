@@ -48,18 +48,20 @@ const todo = (function () {
 
   function filterTasks(date) {
     //return filtered list where tasks are within today and that many days
-    let result;
-    if (date === "all") {
-      result = tasks;
-    } else if (date === "today") {
-      result = tasks.filter((task) => isSameDay(task.dueDate, new Date()));
-    } else if (date === "week") {
-      result = tasks.filter((task) =>
-        differenceInDays(task.dueDate, new Date() <= 7)
-      );
-    } else {
-      result = tasks.filter((task) => task.project === date.project);
+    let filter;
+    switch (date) {
+      case "all":
+        filter = (task) => task;
+        break;
+      case "today":
+        filter = (task) => isSameDay(task.dueDate, new Date());
+        break;
+      case "week":
+        filter = (task) => differenceInDays(task.dueDate, new Date()) <= 7;
+        break;
+      default:
+        filter = (task) => task.project === date.project;
     }
-    events.publish("tasksUpdated", result);
+    events.publish("tasksUpdated", tasks.filter(filter));
   }
 })();

@@ -1273,19 +1273,21 @@ const todo = (function () {
 
   function filterTasks(date) {
     //return filtered list where tasks are within today and that many days
-    let result;
-    if (date === "all") {
-      result = tasks;
-    } else if (date === "today") {
-      result = tasks.filter((task) => (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(task.dueDate, new Date()));
-    } else if (date === "week") {
-      result = tasks.filter((task) =>
-        (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(task.dueDate, new Date() <= 7)
-      );
-    } else {
-      result = tasks.filter((task) => task.project === date.project);
+    let filter;
+    switch (date) {
+      case "all":
+        filter = (task) => task;
+        break;
+      case "today":
+        filter = (task) => (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(task.dueDate, new Date());
+        break;
+      case "week":
+        filter = (task) => (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(task.dueDate, new Date()) <= 7;
+        break;
+      default:
+        filter = (task) => task.project === date.project;
     }
-    _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish("tasksUpdated", result);
+    _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish("tasksUpdated", tasks.filter(filter));
   }
 })();
 
