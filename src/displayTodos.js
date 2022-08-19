@@ -23,10 +23,7 @@ const displayTodos = (() => {
       const element = document.createElement("div");
       element.setAttribute("id", item.name);
       element.classList.add("card");
-
-      const completed = document.createElement("input"); // When checked, changed class of card to completed --> cross out name and change color or card
-      completed.setAttribute("type", "checkbox");
-      element.appendChild(completed);
+      element.appendChild(addCheckbox());
 
       for (const prop in item) {
         let component;
@@ -48,11 +45,7 @@ const displayTodos = (() => {
         }
       }
 
-      const removeBtn = document.createElement("button");
-      removeBtn.setAttribute("type", "button");
-      removeBtn.innerHTML = "del";
-      removeBtn.addEventListener("click", removeCard);
-      element.appendChild(removeBtn);
+      element.appendChild(addRemoveBtn());
       content.appendChild(element);
     }
   }
@@ -62,14 +55,27 @@ const displayTodos = (() => {
     events.publish("cardRemoved", removed); // published id/name of removed todo
   }
 
+  function addCheckbox() {
+    const component = document.createElement("input"); // When checked, changed class of card to completed --> cross out name and change color or card
+    component.setAttribute("type", "checkbox");
+    return component;
+  }
+  function addRemoveBtn() {
+    const component = document.createElement("button");
+    component.setAttribute("type", "button");
+    component.innerHTML = "✖️";
+    component.addEventListener("click", removeCard);
+    return component;
+  }
+
   function getPrioStyle(level) {
-    switch (level) {
-      case "Low":
-        return "green";
-      case "Medium":
-        return "yellow";
-      case "High":
-        return "red";
+    switch (level.toLowerCase()) {
+      case "low":
+        return "#a8f0cb";
+      case "medium":
+        return "#feffc2";
+      case "high":
+        return "#ff7878";
     }
   }
 })();

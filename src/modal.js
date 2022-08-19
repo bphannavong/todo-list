@@ -8,6 +8,10 @@ const handleModal = (function () {
   const closeModal = document.querySelector(".close");
   const addBtn = document.getElementById("addBtn");
   const submitBtn = document.getElementById("submitBtn");
+  const taskSelect = document.querySelector(".modal-content>div:first-of-type");
+  const projectSelect = document.querySelector(
+    ".modal-content>div:nth-of-type(2)"
+  );
 
   // bind events
   addBtn.addEventListener("click", show);
@@ -22,6 +26,9 @@ const handleModal = (function () {
     }
   });
 
+  taskSelect.addEventListener("click", function (e) {
+    e.target.style.color = "red";
+  });
   function show() {
     modal.style.display = "block";
   }

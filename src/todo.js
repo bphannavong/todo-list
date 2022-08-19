@@ -16,6 +16,9 @@ const todo = (function () {
   window.addEventListener("DOMContentLoaded", () => {
     events.publish("tasksUpdated", tasks);
   });
+  window.addEventListener("DOMContentLoaded", () => {
+    events.publish("projectAdded", projects);
+  });
 
   // Todo factory function
   const Todo = ([name, description, dueDate, priority, project = null]) => ({
@@ -23,6 +26,7 @@ const todo = (function () {
     description,
     dueDate,
     priority,
+    project,
   });
 
   tasks = [
@@ -30,11 +34,11 @@ const todo = (function () {
       "To do List",
       "Project for TOP",
       addDays(new Date(), 5),
-      "Low",
+      "low",
       "Example Project",
     ]),
-    Todo(["Study TOP", "details", new Date(), "Medium"]),
-    Todo(["Take out the trash", "wnotes", addDays(new Date(), 10), "High"]),
+    Todo(["Study TOP", "details", new Date(), "medium"]),
+    Todo(["Take out the trash", "wnotes", addDays(new Date(), 10), "high"]),
   ];
 
   // Sub to modal values ==> push todo to list
@@ -75,7 +79,7 @@ const todo = (function () {
         filter = (task) => differenceInDays(task.dueDate, new Date()) <= 7;
         break;
       default:
-        filter = (task) => task.project === date.project;
+        filter = (task) => task.project === date;
     }
     events.publish("tasksUpdated", tasks.filter(filter));
   }
