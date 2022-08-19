@@ -5,6 +5,7 @@
 /* eslint-disable no-restricted-syntax */
 // Module to manipulate DOM for todos
 import events from "./mediator.js";
+import { format } from "date-fns";
 
 const displayTodos = (() => {
   // Cache DOM
@@ -30,6 +31,9 @@ const displayTodos = (() => {
       for (const prop in item) {
         const component = document.createElement("div");
         component.innerHTML = item[prop];
+        if (prop === "dueDate") {
+          component.innerHTML = format(item[prop], "PPP");
+        }
         element.appendChild(component);
       }
 

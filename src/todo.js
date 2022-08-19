@@ -12,6 +12,9 @@ const todo = (function () {
   events.subscribe("formSubmitted", addTodo);
   events.subscribe("cardRemoved", removeTodo);
   events.subscribe("filterChosen", filterTasks);
+  window.addEventListener("DOMContentLoaded", () => {
+    events.publish("tasksUpdated", tasks);
+  });
 
   // Todo factory function
   const Todo = ([name, description, dueDate, priority]) => ({
@@ -22,9 +25,9 @@ const todo = (function () {
   });
 
   tasks = [
-    Todo(["jared", "w", addDays(new Date(), 5)]),
-    Todo(["kenny", "w", new Date()]),
-    Todo(["alpha", "w", addDays(new Date(), 10)]),
+    Todo(["To do List", "w", addDays(new Date(), 5)]),
+    Todo(["Study TOP", "w", new Date()]),
+    Todo(["Take out the trash", "w", addDays(new Date(), 10)]),
   ];
 
   // Sub to modal values ==> push todo to list
