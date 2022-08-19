@@ -3849,12 +3849,23 @@ const displayTodos = (() => {
       element.appendChild(completed);
 
       for (const prop in item) {
-        const component = document.createElement("div");
-        component.innerHTML = item[prop];
-        if (prop === "dueDate") {
-          component.innerHTML = (0,date_fns__WEBPACK_IMPORTED_MODULE_1__["default"])(item[prop], "PPP");
+        let component;
+        switch (prop) {
+          case "name":
+            component = document.createElement("div");
+            component.innerHTML = item[prop];
+            element.appendChild(component);
+            break;
+          case "dueDate":
+            component = document.createElement("div");
+            component.innerHTML = (0,date_fns__WEBPACK_IMPORTED_MODULE_1__["default"])(item[prop], "PPP");
+            element.appendChild(component);
+            break;
+          case "priority":
+            element.style.backgroundColor = getPrioStyle(item[prop]);
+          default:
+            break;
         }
-        element.appendChild(component);
       }
 
       const removeBtn = document.createElement("button");
@@ -3869,6 +3880,17 @@ const displayTodos = (() => {
   function removeCard(e) {
     const removed = e.target.closest("div").id; // find name of todo chosen to remove
     _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish("cardRemoved", removed); // published id/name of removed todo
+  }
+
+  function getPrioStyle(level) {
+    switch (level) {
+      case "Low":
+        return "green";
+      case "Medium":
+        return "yellow";
+      case "High":
+        return "red";
+    }
   }
 })();
 
@@ -3961,7 +3983,7 @@ const handleModal = (function () {
   function getValues() {
     const name = document.getElementById("title").value;
     const description = document.getElementById("description").value;
-    const dueDate = document.getElementById("dueDate").value;
+    const dueDate = new Date(document.getElementById("dueDate").value);
     const priority = document.getElementById("priority").value;
     // const values = values...
     // publish values => to pub
@@ -3999,6 +4021,8 @@ const sidebar = (function () {
   thisWeek.addEventListener("click", () => {
     _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish("filterChosen", "week");
   });
+
+  // function
 })();
 
 
@@ -4024,6 +4048,7 @@ __webpack_require__.r(__webpack_exports__);
 const todo = (function () {
   // task array with all todos
   let tasks = [];
+  let projects = ["Example Project"];
 
   // bind events
   _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe("formSubmitted", addTodo);
@@ -4034,7 +4059,7 @@ const todo = (function () {
   });
 
   // Todo factory function
-  const Todo = ([name, description, dueDate, priority]) => ({
+  const Todo = ([name, description, dueDate, priority, project = null]) => ({
     name,
     description,
     dueDate,
@@ -4042,9 +4067,15 @@ const todo = (function () {
   });
 
   tasks = [
-    Todo(["To do List", "w", (0,date_fns__WEBPACK_IMPORTED_MODULE_1__["default"])(new Date(), 5)]),
-    Todo(["Study TOP", "w", new Date()]),
-    Todo(["Take out the trash", "w", (0,date_fns__WEBPACK_IMPORTED_MODULE_1__["default"])(new Date(), 10)]),
+    Todo([
+      "To do List",
+      "Project for TOP",
+      (0,date_fns__WEBPACK_IMPORTED_MODULE_1__["default"])(new Date(), 5),
+      "Low",
+      "Example Project",
+    ]),
+    Todo(["Study TOP", "details", new Date(), "Medium"]),
+    Todo(["Take out the trash", "wnotes", (0,date_fns__WEBPACK_IMPORTED_MODULE_1__["default"])(new Date(), 10), "High"]),
   ];
 
   // Sub to modal values ==> push todo to list
@@ -4056,6 +4087,11 @@ const todo = (function () {
   function removeTodo(todoName) {
     tasks = tasks.filter((item) => item.name !== todoName);
     _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish("tasksUpdated", tasks);
+  }
+
+  function addProject(projectName) {
+    projects.push(projectName);
+    _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish("projectAdded", projects);
   }
 
   // function isInRange(number) {

@@ -7,6 +7,7 @@ import { isSameDay, addDays, differenceInDays } from "date-fns";
 const todo = (function () {
   // task array with all todos
   let tasks = [];
+  let projects = ["Example Project"];
 
   // bind events
   events.subscribe("formSubmitted", addTodo);
@@ -17,7 +18,7 @@ const todo = (function () {
   });
 
   // Todo factory function
-  const Todo = ([name, description, dueDate, priority]) => ({
+  const Todo = ([name, description, dueDate, priority, project = null]) => ({
     name,
     description,
     dueDate,
@@ -25,9 +26,15 @@ const todo = (function () {
   });
 
   tasks = [
-    Todo(["To do List", "w", addDays(new Date(), 5)]),
-    Todo(["Study TOP", "w", new Date()]),
-    Todo(["Take out the trash", "w", addDays(new Date(), 10)]),
+    Todo([
+      "To do List",
+      "Project for TOP",
+      addDays(new Date(), 5),
+      "Low",
+      "Example Project",
+    ]),
+    Todo(["Study TOP", "details", new Date(), "Medium"]),
+    Todo(["Take out the trash", "wnotes", addDays(new Date(), 10), "High"]),
   ];
 
   // Sub to modal values ==> push todo to list
@@ -39,6 +46,11 @@ const todo = (function () {
   function removeTodo(todoName) {
     tasks = tasks.filter((item) => item.name !== todoName);
     events.publish("tasksUpdated", tasks);
+  }
+
+  function addProject(projectName) {
+    projects.push(projectName);
+    events.publish("projectAdded", projects);
   }
 
   // function isInRange(number) {

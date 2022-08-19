@@ -33,7 +33,7 @@ const handleModal = (function () {
   function getValues() {
     const name = document.getElementById("title").value;
     const description = document.getElementById("description").value;
-    const dueDate = document.getElementById("dueDate").value;
+    const dueDate = new Date(document.getElementById("dueDate").value);
     const priority = document.getElementById("priority").value;
     // const values = values...
     // publish values => to pub

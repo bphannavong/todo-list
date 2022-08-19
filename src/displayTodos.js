@@ -29,12 +29,23 @@ const displayTodos = (() => {
       element.appendChild(completed);
 
       for (const prop in item) {
-        const component = document.createElement("div");
-        component.innerHTML = item[prop];
-        if (prop === "dueDate") {
-          component.innerHTML = format(item[prop], "PPP");
+        let component;
+        switch (prop) {
+          case "name":
+            component = document.createElement("div");
+            component.innerHTML = item[prop];
+            element.appendChild(component);
+            break;
+          case "dueDate":
+            component = document.createElement("div");
+            component.innerHTML = format(item[prop], "PPP");
+            element.appendChild(component);
+            break;
+          case "priority":
+            element.style.backgroundColor = getPrioStyle(item[prop]);
+          default:
+            break;
         }
-        element.appendChild(component);
       }
 
       const removeBtn = document.createElement("button");
@@ -49,5 +60,16 @@ const displayTodos = (() => {
   function removeCard(e) {
     const removed = e.target.closest("div").id; // find name of todo chosen to remove
     events.publish("cardRemoved", removed); // published id/name of removed todo
+  }
+
+  function getPrioStyle(level) {
+    switch (level) {
+      case "Low":
+        return "green";
+      case "Medium":
+        return "yellow";
+      case "High":
+        return "red";
+    }
   }
 })();

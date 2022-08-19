@@ -17,4 +17,6 @@ const sidebar = (function () {
   thisWeek.addEventListener("click", () => {
     events.publish("filterChosen", "week");
   });
+
+  // function
 })();
