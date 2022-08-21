@@ -7,26 +7,32 @@ import { isSameDay, addDays, differenceInDays } from "date-fns";
 const todo = (function () {
   // task array with all todos
   let tasks = [];
-  let projects = ["Example Project"];
+  let projects = [];
 
   // bind events
-  events.subscribe("formSubmitted", addTodo);
+  events.subscribe("todoSubmitted", addTodo);
   events.subscribe("cardRemoved", removeTodo);
   events.subscribe("filterChosen", filterTasks);
+  events.subscribe("projectSubmitted", addProject);
   window.addEventListener("DOMContentLoaded", () => {
     events.publish("tasksUpdated", tasks);
   });
   window.addEventListener("DOMContentLoaded", () => {
-    events.publish("projectAdded", projects);
+    events.publish("projectsUpdated", projects);
   });
 
   // Todo factory function
-  const Todo = ([name, description, dueDate, priority, project = null]) => ({
+  const Todo = ([name, description, dueDate, priority, project]) => ({
     name,
     description,
     dueDate,
     priority,
     project,
+  });
+
+  const Project = ([name, description]) => ({
+    name,
+    description,
   });
 
   tasks = [
@@ -52,18 +58,10 @@ const todo = (function () {
     events.publish("tasksUpdated", tasks);
   }
 
-  function addProject(projectName) {
-    projects.push(projectName);
-    events.publish("projectAdded", projects);
+  function addProject(newValues) {
+    projects.push(Project(newValues));
+    events.publish("projectsUpdated", projects);
   }
-
-  // function isInRange(number) {
-  //   let date2 = addDays(Date.now(), number);
-  //   return function (date) {
-  //     console.log(differenceInDays(date2, date));
-  //     return differenceInDays(date2, date) <= number;
-  //   };
-  // }
 
   function filterTasks(date) {
     //return filtered list where tasks are within today and that many days

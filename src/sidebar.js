@@ -18,15 +18,18 @@ const sidebar = (function () {
     events.publish("filterChosen", "week");
   });
 
-  events.subscribe("projectAdded", renderProjects);
+  events.subscribe("projectsUpdated", renderProjects);
 
   function renderProjects(projArr) {
+    if (!projArr) {
+      return;
+    }
+    projects.innerHTML = "";
     projArr.forEach((proj) => {
       const component = document.createElement("div");
-      component.innerHTML = proj;
-      console.log(proj);
+      component.innerHTML = proj.name;
       component.addEventListener("click", () => {
-        events.publish("filterChosen", proj);
+        events.publish("filterChosen", proj.name);
       });
       projects.appendChild(component);
     });

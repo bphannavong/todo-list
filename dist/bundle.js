@@ -26,7 +26,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n  font-family: \"Roboto\";\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format(\"truetype\");\n}\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nhtml {\n  font-family: \"Roboto\", Arial, Helvetica, sans-serif;\n  font-size: 16px;\n}\n\nmain {\n  display: grid;\n  grid-template-rows: 1fr 10fr 0.2fr;\n\n  position: relative;\n  width: 100vw;\n  height: 100vh;\n}\n\n/* Header */\n#header {\n  display: grid;\n  place-items: end center;\n  padding: 1rem;\n}\n\n/* Application section */\n#app {\n  display: grid;\n  grid-template-columns: minmax(max-content, 1fr) 5fr;\n  place-self: center;\n  border-radius: 5px;\n\n  width: 90%;\n  height: 90%;\n  padding: 1rem;\n\n  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n}\n\n/* Sidebar of App */\n\n#sidebar {\n  display: grid;\n  place-content: start;\n  border-right: 1px solid gray;\n}\n\n#sidebar > div {\n  display: grid;\n  grid-auto-flow: row;\n\n  gap: 1rem;\n  margin: 1rem;\n}\n\n#sidebar > div > div {\n  width: 100%;\n  padding: 0.5rem 3rem;\n  transition: 0.1s;\n}\n\n#sidebar > div > div:hover {\n  border-radius: 5px;\n  background-color: lightgray;\n}\n\nhr {\n  margin: 1rem;\n}\n\n/* Main contents of App */\n#main-content {\n  display: grid;\n  place-items: start;\n  overflow-y: scroll;\n}\n\n#main-content > button {\n  place-self: end;\n  margin: 1rem;\n  border: none;\n  border-radius: 50%;\n  width: 3rem;\n  height: 3rem;\n  background: rgb(60, 184, 184);\n}\n\n#todos {\n  display: grid;\n  justify-self: center;\n  width: 90%;\n\n  gap: 1rem;\n  margin: 1rem;\n}\n\n.card {\n  display: grid;\n  grid-template-columns: 1fr 10fr 3fr 1fr;\n  border: 1px solid black;\n  border-radius: 5px;\n  width: 100%;\n  align-items: center;\n  justify-items: end;\n  padding: 1rem;\n  gap: 1rem;\n  transition: 0.1s;\n}\n.card > input[type=\"checkbox\"] {\n  /* hide default appearance */\n  --webkit-appearance: none;\n  appearance: none;\n  transition: box-shadow 0.3s;\n  background: lightgrey;\n  /* change cursor to pointer hand */\n  cursor: pointer;\n  width: 40px;\n  height: 40px;\n  border-radius: 100%;\n  border: none;\n\n  justify-self: start;\n}\n\n.card > input[type=\"checkbox\"]:checked {\n  box-shadow: inset 0 0 0 20px green;\n}\n.card > button:last-child {\n  border: none;\n  background: none;\n  width: 10px;\n  height: 10px;\n  justify-self: end;\n}\n\n.card div:first-of-type {\n  justify-self: start;\n  font-size: 1.2rem;\n  font-weight: 600;\n}\n\n.card:hover {\n  box-shadow: 0px 5px 20px gray;\n}\n/* Modal popup for new task */\n\n.modal {\n  display: none; /* hidden by default */\n  position: fixed; /*stay in place in relation to the viewport (stays even when scrolled)*/\n  z-index: 1; /* sit on top */\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto; /* enable scroll if needed */\n  background-color: rgb(0, 0, 0); /*fallback color */\n  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */\n}\n\n.modal-window {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-around;\n  background-color: #fefefe;\n  border: none;\n  border-radius: 10px;\n  margin: 15% auto; /*15% from the top and centered */\n  padding: 1rem;\n  gap: 2rem;\n  border: 1px solid #888;\n  width: 70%;\n  height: 50%;\n  min-width: 22rem;\n}\n\n.modal-content {\n  display: none;\n}\n\n.modal-content.visible {\n  display: block;\n}\n\n.modal-content div {\n  width: 80%;\n  margin-bottom: 0.5rem;\n}\n\n.close {\n  color: #aaa;\n  float: right;\n  align-self: end;\n  font-size: 28px;\n  font-weight: bold;\n  border: none;\n  background-color: #fefefe;\n}\n\n.close:hover,\n.close:focus {\n  color: black;\n  text-decoration: none;\n  cursor: pointer;\n}\n\n.modal select,\n.modal input {\n  appearance: none;\n  width: 100%;\n  height: 2rem;\n  padding-left: 1rem;\n  border-radius: 5px;\n  border: none;\n  background-color: lightgray;\n}\n\n/* Footer */\n#footer {\n  text-align: center;\n  background-color: aquamarine;\n}\n", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;EACE,qBAAqB;EACrB,+DAA0D;AAC5D;;AAEA;EACE,SAAS;EACT,UAAU;EACV,sBAAsB;AACxB;;AAEA;EACE,mDAAmD;EACnD,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,kCAAkC;;EAElC,kBAAkB;EAClB,YAAY;EACZ,aAAa;AACf;;AAEA,WAAW;AACX;EACE,aAAa;EACb,uBAAuB;EACvB,aAAa;AACf;;AAEA,wBAAwB;AACxB;EACE,aAAa;EACb,mDAAmD;EACnD,kBAAkB;EAClB,kBAAkB;;EAElB,UAAU;EACV,WAAW;EACX,aAAa;;EAEb,qDAAqD;AACvD;;AAEA,mBAAmB;;AAEnB;EACE,aAAa;EACb,oBAAoB;EACpB,4BAA4B;AAC9B;;AAEA;EACE,aAAa;EACb,mBAAmB;;EAEnB,SAAS;EACT,YAAY;AACd;;AAEA;EACE,WAAW;EACX,oBAAoB;EACpB,gBAAgB;AAClB;;AAEA;EACE,kBAAkB;EAClB,2BAA2B;AAC7B;;AAEA;EACE,YAAY;AACd;;AAEA,yBAAyB;AACzB;EACE,aAAa;EACb,kBAAkB;EAClB,kBAAkB;AACpB;;AAEA;EACE,eAAe;EACf,YAAY;EACZ,YAAY;EACZ,kBAAkB;EAClB,WAAW;EACX,YAAY;EACZ,6BAA6B;AAC/B;;AAEA;EACE,aAAa;EACb,oBAAoB;EACpB,UAAU;;EAEV,SAAS;EACT,YAAY;AACd;;AAEA;EACE,aAAa;EACb,uCAAuC;EACvC,uBAAuB;EACvB,kBAAkB;EAClB,WAAW;EACX,mBAAmB;EACnB,kBAAkB;EAClB,aAAa;EACb,SAAS;EACT,gBAAgB;AAClB;AACA;EACE,4BAA4B;EAC5B,yBAAyB;EACzB,gBAAgB;EAChB,2BAA2B;EAC3B,qBAAqB;EACrB,kCAAkC;EAClC,eAAe;EACf,WAAW;EACX,YAAY;EACZ,mBAAmB;EACnB,YAAY;;EAEZ,mBAAmB;AACrB;;AAEA;EACE,kCAAkC;AACpC;AACA;EACE,YAAY;EACZ,gBAAgB;EAChB,WAAW;EACX,YAAY;EACZ,iBAAiB;AACnB;;AAEA;EACE,mBAAmB;EACnB,iBAAiB;EACjB,gBAAgB;AAClB;;AAEA;EACE,6BAA6B;AAC/B;AACA,6BAA6B;;AAE7B;EACE,aAAa,EAAE,sBAAsB;EACrC,eAAe,EAAE,uEAAuE;EACxF,UAAU,EAAE,eAAe;EAC3B,OAAO;EACP,MAAM;EACN,WAAW;EACX,YAAY;EACZ,cAAc,EAAE,4BAA4B;EAC5C,8BAA8B,EAAE,kBAAkB;EAClD,oCAAoC,EAAE,qBAAqB;AAC7D;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,6BAA6B;EAC7B,yBAAyB;EACzB,YAAY;EACZ,mBAAmB;EACnB,gBAAgB,EAAE,iCAAiC;EACnD,aAAa;EACb,SAAS;EACT,sBAAsB;EACtB,UAAU;EACV,WAAW;EACX,gBAAgB;AAClB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,UAAU;EACV,qBAAqB;AACvB;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,eAAe;EACf,eAAe;EACf,iBAAiB;EACjB,YAAY;EACZ,yBAAyB;AAC3B;;AAEA;;EAEE,YAAY;EACZ,qBAAqB;EACrB,eAAe;AACjB;;AAEA;;EAEE,gBAAgB;EAChB,WAAW;EACX,YAAY;EACZ,kBAAkB;EAClB,kBAAkB;EAClB,YAAY;EACZ,2BAA2B;AAC7B;;AAEA,WAAW;AACX;EACE,kBAAkB;EAClB,4BAA4B;AAC9B","sourcesContent":["@font-face {\n  font-family: \"Roboto\";\n  src: url(\"./assets/Roboto-Regular.ttf\") format(\"truetype\");\n}\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nhtml {\n  font-family: \"Roboto\", Arial, Helvetica, sans-serif;\n  font-size: 16px;\n}\n\nmain {\n  display: grid;\n  grid-template-rows: 1fr 10fr 0.2fr;\n\n  position: relative;\n  width: 100vw;\n  height: 100vh;\n}\n\n/* Header */\n#header {\n  display: grid;\n  place-items: end center;\n  padding: 1rem;\n}\n\n/* Application section */\n#app {\n  display: grid;\n  grid-template-columns: minmax(max-content, 1fr) 5fr;\n  place-self: center;\n  border-radius: 5px;\n\n  width: 90%;\n  height: 90%;\n  padding: 1rem;\n\n  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n}\n\n/* Sidebar of App */\n\n#sidebar {\n  display: grid;\n  place-content: start;\n  border-right: 1px solid gray;\n}\n\n#sidebar > div {\n  display: grid;\n  grid-auto-flow: row;\n\n  gap: 1rem;\n  margin: 1rem;\n}\n\n#sidebar > div > div {\n  width: 100%;\n  padding: 0.5rem 3rem;\n  transition: 0.1s;\n}\n\n#sidebar > div > div:hover {\n  border-radius: 5px;\n  background-color: lightgray;\n}\n\nhr {\n  margin: 1rem;\n}\n\n/* Main contents of App */\n#main-content {\n  display: grid;\n  place-items: start;\n  overflow-y: scroll;\n}\n\n#main-content > button {\n  place-self: end;\n  margin: 1rem;\n  border: none;\n  border-radius: 50%;\n  width: 3rem;\n  height: 3rem;\n  background: rgb(60, 184, 184);\n}\n\n#todos {\n  display: grid;\n  justify-self: center;\n  width: 90%;\n\n  gap: 1rem;\n  margin: 1rem;\n}\n\n.card {\n  display: grid;\n  grid-template-columns: 1fr 10fr 3fr 1fr;\n  border: 1px solid black;\n  border-radius: 5px;\n  width: 100%;\n  align-items: center;\n  justify-items: end;\n  padding: 1rem;\n  gap: 1rem;\n  transition: 0.1s;\n}\n.card > input[type=\"checkbox\"] {\n  /* hide default appearance */\n  --webkit-appearance: none;\n  appearance: none;\n  transition: box-shadow 0.3s;\n  background: lightgrey;\n  /* change cursor to pointer hand */\n  cursor: pointer;\n  width: 40px;\n  height: 40px;\n  border-radius: 100%;\n  border: none;\n\n  justify-self: start;\n}\n\n.card > input[type=\"checkbox\"]:checked {\n  box-shadow: inset 0 0 0 20px green;\n}\n.card > button:last-child {\n  border: none;\n  background: none;\n  width: 10px;\n  height: 10px;\n  justify-self: end;\n}\n\n.card div:first-of-type {\n  justify-self: start;\n  font-size: 1.2rem;\n  font-weight: 600;\n}\n\n.card:hover {\n  box-shadow: 0px 5px 20px gray;\n}\n/* Modal popup for new task */\n\n.modal {\n  display: none; /* hidden by default */\n  position: fixed; /*stay in place in relation to the viewport (stays even when scrolled)*/\n  z-index: 1; /* sit on top */\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto; /* enable scroll if needed */\n  background-color: rgb(0, 0, 0); /*fallback color */\n  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */\n}\n\n.modal-window {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-around;\n  background-color: #fefefe;\n  border: none;\n  border-radius: 10px;\n  margin: 15% auto; /*15% from the top and centered */\n  padding: 1rem;\n  gap: 2rem;\n  border: 1px solid #888;\n  width: 70%;\n  height: 50%;\n  min-width: 22rem;\n}\n\n.modal-content {\n  display: none;\n}\n\n.modal-content.visible {\n  display: block;\n}\n\n.modal-content div {\n  width: 80%;\n  margin-bottom: 0.5rem;\n}\n\n.close {\n  color: #aaa;\n  float: right;\n  align-self: end;\n  font-size: 28px;\n  font-weight: bold;\n  border: none;\n  background-color: #fefefe;\n}\n\n.close:hover,\n.close:focus {\n  color: black;\n  text-decoration: none;\n  cursor: pointer;\n}\n\n.modal select,\n.modal input {\n  appearance: none;\n  width: 100%;\n  height: 2rem;\n  padding-left: 1rem;\n  border-radius: 5px;\n  border: none;\n  background-color: lightgray;\n}\n\n/* Footer */\n#footer {\n  text-align: center;\n  background-color: aquamarine;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n  font-family: \"Roboto\";\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format(\"truetype\");\n}\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nhtml {\n  font-family: \"Roboto\", Arial, Helvetica, sans-serif;\n  font-size: 16px;\n}\n\nmain {\n  display: grid;\n  grid-template-rows: 1fr 10fr 0.2fr;\n\n  position: relative;\n  width: 100vw;\n  height: 100vh;\n}\n\n/* Header */\n#header {\n  display: grid;\n  place-items: end center;\n  padding: 1rem;\n}\n\n/* Application section */\n#app {\n  display: grid;\n  grid-template-columns: minmax(max-content, 1fr) 5fr;\n  place-self: center;\n  border-radius: 5px;\n\n  width: 90%;\n  height: 90%;\n  padding: 1rem;\n\n  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n}\n\n/* Sidebar of App */\n\n#sidebar {\n  display: grid;\n  place-content: start;\n  border-right: 1px solid gray;\n}\n\n#sidebar > div {\n  display: grid;\n  grid-auto-flow: row;\n\n  gap: 1rem;\n  margin: 1rem;\n}\n\n#sidebar > div > div {\n  width: 100%;\n  padding: 0.5rem 3rem;\n  transition: 0.1s;\n}\n\n#sidebar > div > div:hover {\n  border-radius: 5px;\n  background-color: lightgray;\n}\n\nhr {\n  margin: 1rem;\n}\n\n/* Main contents of App */\n#main-content {\n  display: grid;\n  place-items: start;\n  overflow-y: scroll;\n}\n\n#main-content > button {\n  place-self: end;\n  margin: 1rem;\n  border: none;\n  border-radius: 50%;\n  width: 3rem;\n  height: 3rem;\n  background: rgb(60, 184, 184);\n}\n\n#todos {\n  display: grid;\n  justify-self: center;\n  width: 90%;\n\n  gap: 1rem;\n  margin: 1rem;\n}\n\n.card {\n  display: grid;\n  grid-template-columns: 1fr 10fr 3fr 1fr;\n  border: 1px solid black;\n  border-radius: 5px;\n  width: 100%;\n  align-items: center;\n  justify-items: end;\n  padding: 1rem;\n  gap: 1rem;\n  transition: 0.1s;\n}\n.card > input[type=\"checkbox\"] {\n  /* hide default appearance */\n  --webkit-appearance: none;\n  appearance: none;\n  transition: box-shadow 0.3s;\n  background: lightgrey;\n  /* change cursor to pointer hand */\n  cursor: pointer;\n  width: 40px;\n  height: 40px;\n  border-radius: 100%;\n  border: none;\n\n  justify-self: start;\n}\n\n.card > input[type=\"checkbox\"]:checked {\n  box-shadow: inset 0 0 0 20px green;\n}\n.card > button:last-child {\n  border: none;\n  background: none;\n  width: 10px;\n  height: 10px;\n  justify-self: end;\n}\n\n.card div:first-of-type {\n  justify-self: start;\n  font-size: 1.2rem;\n  font-weight: 600;\n}\n\n.card:hover {\n  box-shadow: 0px 5px 20px gray;\n}\n/* Modal popup for new task */\n\n.modal {\n  display: none; /* hidden by default */\n  position: fixed; /*stay in place in relation to the viewport (stays even when scrolled)*/\n  z-index: 1; /* sit on top */\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto; /* enable scroll if needed */\n  background-color: rgb(0, 0, 0); /*fallback color */\n  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */\n}\n\n#modal-window {\n  display: grid;\n  grid-template-columns: 2fr 6fr 1fr;\n  background-color: #fefefe;\n  border: 3px solid red;\n  border-radius: 10px;\n  margin: 15% auto; /*15% from the top and centered */\n  padding: 1rem;\n  gap: 2rem;\n  /* border: 1px solid #888; */\n  width: 70%;\n  height: 50%;\n  min-width: 22rem;\n}\n\n.modal-content {\n  display: none;\n}\n\n.modal-content.visible {\n  display: block;\n}\n\n.modal-content div {\n  width: 80%;\n  margin-bottom: 0.5rem;\n}\n\n#modal-selection {\n  display: grid;\n  grid-template: 1fr 1fr / 1fr 1fr;\n  place-items: center;\n  gap: 1rem;\n  width: 80%;\n}\n\n#modal-selection div:first-child {\n  justify-self: center;\n  grid-column: 1 / span 2;\n}\n\n#modal-selection div:not(:first-child):hover,\n#modal-selection div.selected {\n  color: red;\n}\n\n.close {\n  color: #aaa;\n  float: right;\n  justify-self: end;\n  grid-column: -1;\n  font-size: 28px;\n  font-weight: bold;\n  border: none;\n  background-color: #fefefe;\n}\n\n.close:hover,\n.close:focus {\n  color: black;\n  text-decoration: none;\n  cursor: pointer;\n}\n\n.modal select,\n.modal input {\n  appearance: none;\n  width: 100%;\n  height: 2rem;\n  padding-left: 1rem;\n  border-radius: 5px;\n  border: none;\n  background-color: lightgray;\n}\n\n/* Footer */\n#footer {\n  text-align: center;\n  background-color: aquamarine;\n}\n", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"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","sourcesContent":["@font-face {\n  font-family: \"Roboto\";\n  src: url(\"./assets/Roboto-Regular.ttf\") format(\"truetype\");\n}\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nhtml {\n  font-family: \"Roboto\", Arial, Helvetica, sans-serif;\n  font-size: 16px;\n}\n\nmain {\n  display: grid;\n  grid-template-rows: 1fr 10fr 0.2fr;\n\n  position: relative;\n  width: 100vw;\n  height: 100vh;\n}\n\n/* Header */\n#header {\n  display: grid;\n  place-items: end center;\n  padding: 1rem;\n}\n\n/* Application section */\n#app {\n  display: grid;\n  grid-template-columns: minmax(max-content, 1fr) 5fr;\n  place-self: center;\n  border-radius: 5px;\n\n  width: 90%;\n  height: 90%;\n  padding: 1rem;\n\n  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\n}\n\n/* Sidebar of App */\n\n#sidebar {\n  display: grid;\n  place-content: start;\n  border-right: 1px solid gray;\n}\n\n#sidebar > div {\n  display: grid;\n  grid-auto-flow: row;\n\n  gap: 1rem;\n  margin: 1rem;\n}\n\n#sidebar > div > div {\n  width: 100%;\n  padding: 0.5rem 3rem;\n  transition: 0.1s;\n}\n\n#sidebar > div > div:hover {\n  border-radius: 5px;\n  background-color: lightgray;\n}\n\nhr {\n  margin: 1rem;\n}\n\n/* Main contents of App */\n#main-content {\n  display: grid;\n  place-items: start;\n  overflow-y: scroll;\n}\n\n#main-content > button {\n  place-self: end;\n  margin: 1rem;\n  border: none;\n  border-radius: 50%;\n  width: 3rem;\n  height: 3rem;\n  background: rgb(60, 184, 184);\n}\n\n#todos {\n  display: grid;\n  justify-self: center;\n  width: 90%;\n\n  gap: 1rem;\n  margin: 1rem;\n}\n\n.card {\n  display: grid;\n  grid-template-columns: 1fr 10fr 3fr 1fr;\n  border: 1px solid black;\n  border-radius: 5px;\n  width: 100%;\n  align-items: center;\n  justify-items: end;\n  padding: 1rem;\n  gap: 1rem;\n  transition: 0.1s;\n}\n.card > input[type=\"checkbox\"] {\n  /* hide default appearance */\n  --webkit-appearance: none;\n  appearance: none;\n  transition: box-shadow 0.3s;\n  background: lightgrey;\n  /* change cursor to pointer hand */\n  cursor: pointer;\n  width: 40px;\n  height: 40px;\n  border-radius: 100%;\n  border: none;\n\n  justify-self: start;\n}\n\n.card > input[type=\"checkbox\"]:checked {\n  box-shadow: inset 0 0 0 20px green;\n}\n.card > button:last-child {\n  border: none;\n  background: none;\n  width: 10px;\n  height: 10px;\n  justify-self: end;\n}\n\n.card div:first-of-type {\n  justify-self: start;\n  font-size: 1.2rem;\n  font-weight: 600;\n}\n\n.card:hover {\n  box-shadow: 0px 5px 20px gray;\n}\n/* Modal popup for new task */\n\n.modal {\n  display: none; /* hidden by default */\n  position: fixed; /*stay in place in relation to the viewport (stays even when scrolled)*/\n  z-index: 1; /* sit on top */\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto; /* enable scroll if needed */\n  background-color: rgb(0, 0, 0); /*fallback color */\n  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */\n}\n\n#modal-window {\n  display: grid;\n  grid-template-columns: 2fr 6fr 1fr;\n  background-color: #fefefe;\n  border: 3px solid red;\n  border-radius: 10px;\n  margin: 15% auto; /*15% from the top and centered */\n  padding: 1rem;\n  gap: 2rem;\n  /* border: 1px solid #888; */\n  width: 70%;\n  height: 50%;\n  min-width: 22rem;\n}\n\n.modal-content {\n  display: none;\n}\n\n.modal-content.visible {\n  display: block;\n}\n\n.modal-content div {\n  width: 80%;\n  margin-bottom: 0.5rem;\n}\n\n#modal-selection {\n  display: grid;\n  grid-template: 1fr 1fr / 1fr 1fr;\n  place-items: center;\n  gap: 1rem;\n  width: 80%;\n}\n\n#modal-selection div:first-child {\n  justify-self: center;\n  grid-column: 1 / span 2;\n}\n\n#modal-selection div:not(:first-child):hover,\n#modal-selection div.selected {\n  color: red;\n}\n\n.close {\n  color: #aaa;\n  float: right;\n  justify-self: end;\n  grid-column: -1;\n  font-size: 28px;\n  font-weight: bold;\n  border: none;\n  background-color: #fefefe;\n}\n\n.close:hover,\n.close:focus {\n  color: black;\n  text-decoration: none;\n  cursor: pointer;\n}\n\n.modal select,\n.modal input {\n  appearance: none;\n  width: 100%;\n  height: 2rem;\n  padding-left: 1rem;\n  border-radius: 5px;\n  border: none;\n  background-color: lightgray;\n}\n\n/* Footer */\n#footer {\n  text-align: center;\n  background-color: aquamarine;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3963,18 +3963,20 @@ const handleModal = (function () {
   const modal = document.getElementById("taskModal");
   const closeModal = document.querySelector(".close");
   const addBtn = document.getElementById("addBtn");
-  const submitBtn = document.getElementById("submitBtn");
-  const taskSelect = document.querySelector(".taskSelect");
-  const projectSelect = document.querySelector(".projectSelect");
-
+  const todoSubmit = document.getElementById("todoSubmit");
+  const projectSubmit = document.getElementById("projectSubmit");
+  const taskSelect = document.getElementById("taskSelect");
+  const projectSelect = document.getElementById("projectSelect");
   const taskModal = document.getElementById("todoForm");
   const projectModal = document.getElementById("projectForm");
 
   // bind events
   addBtn.addEventListener("click", show);
   closeModal.addEventListener("click", hide);
-  submitBtn.addEventListener("click", getValues);
-  submitBtn.addEventListener("click", hide);
+  todoSubmit.addEventListener("click", addTodo);
+  todoSubmit.addEventListener("click", hide);
+  projectSubmit.addEventListener("click", addProject);
+  projectSubmit.addEventListener("click", hide);
 
   window.addEventListener("click", (e) => {
     // if window is clicked on modal (not modal content) then close modal
@@ -3984,11 +3986,15 @@ const handleModal = (function () {
   });
 
   taskSelect.addEventListener("click", function () {
+    taskSelect.className = "selected";
+    projectSelect.removeAttribute("class");
     projectModal.className = "modal-content";
     taskModal.className = "modal-content visible";
   });
 
   projectSelect.addEventListener("click", function () {
+    projectSelect.className = "selected";
+    taskSelect.removeAttribute("class");
     taskModal.className = "modal-content";
     projectModal.className = "modal-content visible";
   });
@@ -4001,14 +4007,26 @@ const handleModal = (function () {
     modal.style.display = "none";
   }
 
-  function getValues() {
+  function addTodo() {
     const name = document.getElementById("title").value;
     const description = document.getElementById("description").value;
     const dueDate = new Date(document.getElementById("dueDate").value);
     const priority = document.getElementById("priority").value;
-    // const values = values...
-    // publish values => to pub
-    _mediator_js__WEBPACK_IMPORTED_MODULE_1__["default"].publish("formSubmitted", [name, description, dueDate, priority]);
+    const project = document.getElementById("projectCat").value;
+    _mediator_js__WEBPACK_IMPORTED_MODULE_1__["default"].publish("todoSubmitted", [
+      name,
+      description,
+      dueDate,
+      priority,
+      project,
+    ]);
+  }
+
+  function addProject() {
+    const name = document.getElementById("projectTitle").value;
+    const description = document.getElementById("projDesc").value;
+
+    _mediator_js__WEBPACK_IMPORTED_MODULE_1__["default"].publish("projectSubmitted", [name, description]);
   }
 })();
 
@@ -4043,15 +4061,18 @@ const sidebar = (function () {
     _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish("filterChosen", "week");
   });
 
-  _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe("projectAdded", renderProjects);
+  _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe("projectsUpdated", renderProjects);
 
   function renderProjects(projArr) {
+    if (!projArr) {
+      return;
+    }
+    projects.innerHTML = "";
     projArr.forEach((proj) => {
       const component = document.createElement("div");
-      component.innerHTML = proj;
-      console.log(proj);
+      component.innerHTML = proj.name;
       component.addEventListener("click", () => {
-        _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish("filterChosen", proj);
+        _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish("filterChosen", proj.name);
       });
       projects.appendChild(component);
     });
@@ -4081,26 +4102,32 @@ __webpack_require__.r(__webpack_exports__);
 const todo = (function () {
   // task array with all todos
   let tasks = [];
-  let projects = ["Example Project"];
+  let projects = [];
 
   // bind events
-  _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe("formSubmitted", addTodo);
+  _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe("todoSubmitted", addTodo);
   _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe("cardRemoved", removeTodo);
   _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe("filterChosen", filterTasks);
+  _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].subscribe("projectSubmitted", addProject);
   window.addEventListener("DOMContentLoaded", () => {
     _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish("tasksUpdated", tasks);
   });
   window.addEventListener("DOMContentLoaded", () => {
-    _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish("projectAdded", projects);
+    _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish("projectsUpdated", projects);
   });
 
   // Todo factory function
-  const Todo = ([name, description, dueDate, priority, project = null]) => ({
+  const Todo = ([name, description, dueDate, priority, project]) => ({
     name,
     description,
     dueDate,
     priority,
     project,
+  });
+
+  const Project = ([name, description]) => ({
+    name,
+    description,
   });
 
   tasks = [
@@ -4126,18 +4153,10 @@ const todo = (function () {
     _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish("tasksUpdated", tasks);
   }
 
-  function addProject(projectName) {
-    projects.push(projectName);
-    _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish("projectAdded", projects);
+  function addProject(newValues) {
+    projects.push(Project(newValues));
+    _mediator_js__WEBPACK_IMPORTED_MODULE_0__["default"].publish("projectsUpdated", projects);
   }
-
-  // function isInRange(number) {
-  //   let date2 = addDays(Date.now(), number);
-  //   return function (date) {
-  //     console.log(differenceInDays(date2, date));
-  //     return differenceInDays(date2, date) <= number;
-  //   };
-  // }
 
   function filterTasks(date) {
     //return filtered list where tasks are within today and that many days

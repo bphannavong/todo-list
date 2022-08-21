@@ -29,10 +29,12 @@
 
         <div id="taskModal" class="modal">
           <div id="modal-window">
-            <legend>Add new:</legend>
-            <div class="taskSelect" style="color: red">Task</div>
-            <div class="projectSelect">Project</div>
             <button type="reset" class="close">&times;</button>
+            <div id="modal-selection">
+              <div>Add new:</div>
+              <div id="taskSelect" class="selected">Task</div>
+              <div id="projectSelect">Project</div>
+            </div>
 
             <form id="todoForm" class="modal-content visible">
               <div>
@@ -60,23 +62,23 @@
                   <option value="high">High</option>
                 </select>
               </div>
-            </form>
-            <form id="projectForm" class="modal-content visible">
               <div>
-                <label for="title">Title: </label>
-                <input type="text" id="title" name="name" required />
+                <label for="projectCat">Project: </label>
+                <input type="text" id="projectCat" name="projectCat" />
+              </div>
+              <button type="reset" id="todoSubmit">Add Todo</button>
+            </form>
+            <form id="projectForm" class="modal-content">
+              <div>
+                <label for="projectTitle">Title: </label>
+                <input type="text" id="projectTitle" name="projDesc" required />
               </div>
               <div>
-                <label for="Description">Description: </label>
-                <input
-                  type="textarea"
-                  id="description"
-                  name="author"
-                  required
-                />
+                <label for="projDesc">Description: </label>
+                <input type="textarea" id="projDesc" name="projDesc" required />
               </div>
+              <button type="reset" id="projectSubmit">Add Project</button>
             </form>
-            <button type="reset" id="submitBtn">Add Book</button>
           </div>
         </div>
       </div>
