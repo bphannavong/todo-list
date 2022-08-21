@@ -164,7 +164,7 @@ hr {
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-.modal-content {
+.modal-window {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -181,10 +181,19 @@ hr {
   min-width: 22rem;
 }
 
+.modal-content {
+  display: none;
+}
+
+.modal-content.visible {
+  display: block;
+}
+
 .modal-content div {
   width: 80%;
   margin-bottom: 0.5rem;
 }
+
 .close {
   color: #aaa;
   float: right;

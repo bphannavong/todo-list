@@ -8,10 +8,11 @@ const handleModal = (function () {
   const closeModal = document.querySelector(".close");
   const addBtn = document.getElementById("addBtn");
   const submitBtn = document.getElementById("submitBtn");
-  const taskSelect = document.querySelector(".modal-content>div:first-of-type");
-  const projectSelect = document.querySelector(
-    ".modal-content>div:nth-of-type(2)"
-  );
+  const taskSelect = document.querySelector(".taskSelect");
+  const projectSelect = document.querySelector(".projectSelect");
+
+  const taskModal = document.getElementById("todoForm");
+  const projectModal = document.getElementById("projectForm");
 
   // bind events
   addBtn.addEventListener("click", show);
@@ -26,8 +27,14 @@ const handleModal = (function () {
     }
   });
 
-  taskSelect.addEventListener("click", function (e) {
-    e.target.style.color = "red";
+  taskSelect.addEventListener("click", function () {
+    projectModal.className = "modal-content";
+    taskModal.className = "modal-content visible";
+  });
+
+  projectSelect.addEventListener("click", function () {
+    taskModal.className = "modal-content";
+    projectModal.className = "modal-content visible";
   });
 
   function show() {

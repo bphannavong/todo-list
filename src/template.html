@@ -28,33 +28,56 @@
         </div>
 
         <div id="taskModal" class="modal">
-          <form id="todoForm" class="modal-content">
+          <div id="modal-window">
             <legend>Add new:</legend>
-            <div>Task</div>
-            <div>Project</div>
+            <div class="taskSelect" style="color: red">Task</div>
+            <div class="projectSelect">Project</div>
             <button type="reset" class="close">&times;</button>
-            <div>
-              <label for="title">Title: </label>
-              <input type="text" id="title" name="name" required />
-            </div>
-            <div>
-              <label for="Description">Description: </label>
-              <input type="textarea" id="description" name="author" required />
-            </div>
-            <div>
-              <label for="dueDate">Due Date: </label>
-              <input type="date" id="dueDate" name="dueDate" required />
-            </div>
-            <div>
-              <label for="priority">Priority? </label>
-              <select name="priority" id="priority">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-              </select>
-            </div>
+
+            <form id="todoForm" class="modal-content visible">
+              <div>
+                <label for="title">Title: </label>
+                <input type="text" id="title" name="name" required />
+              </div>
+              <div>
+                <label for="Description">Description: </label>
+                <input
+                  type="textarea"
+                  id="description"
+                  name="author"
+                  required
+                />
+              </div>
+              <div>
+                <label for="dueDate">Due Date: </label>
+                <input type="date" id="dueDate" name="dueDate" required />
+              </div>
+              <div>
+                <label for="priority">Priority? </label>
+                <select name="priority" id="priority">
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+            </form>
+            <form id="projectForm" class="modal-content visible">
+              <div>
+                <label for="title">Title: </label>
+                <input type="text" id="title" name="name" required />
+              </div>
+              <div>
+                <label for="Description">Description: </label>
+                <input
+                  type="textarea"
+                  id="description"
+                  name="author"
+                  required
+                />
+              </div>
+            </form>
             <button type="reset" id="submitBtn">Add Book</button>
-          </form>
+          </div>
         </div>
       </div>
       <div id="footer">Made by Billy Phannavong</div>
